@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chatApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Paradigm Bread</title>
+	<link rel="icon" type="image/ico" href="/favicon.ico"/>
+    <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBLcfwhzN8eAbS7fg1wVx6AIWR4Orz6nr0",
+    authDomain: "ecbm-31cf0.firebaseapp.com",
+    databaseURL: "https://ecbm-31cf0.firebaseio.com",
+    projectId: "ecbm-31cf0",
+    storageBucket: "",
+    messagingSenderId: "85157949430"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+    
+    <script src="app.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body ng-controller="ChatController">
+    <br>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+				<img src="bread.png" alt="Bread Logo">
+			</div>
+            <div class="panel-body">
+                <p ng-repeat="m in messages"><b>{{m.username}}:</b> {{m.message}} - <i>{{m.date | date:'medium'}}</i></p>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Message here..." ng-model="messageText">
+                    <input type="text" class="form-control" placeholder="Username here..." ng-model="usernameText">
+                </div>
+                <button type="submit" class="btn btn-default" ng-click="send()">Send</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
