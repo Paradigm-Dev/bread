@@ -27,7 +27,7 @@
 p {
   font-family: SFProDisplay-Light, SF Pro Display;
   font-size: 15px;
-  position: absolute;
+  position: relative;
 }
 
 h1 {

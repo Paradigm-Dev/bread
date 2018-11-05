@@ -1,6 +1,23 @@
 <html lang="en">
 <head>
-	<script src="app.js"></script>
+  <script>
+    var uiConfig = {
+      ‘signInSuccessUrl’: ‘<url-to-redirect-to-on-success>’,
+      ‘signInOptions’: [
+        firebase.auth.EmailAuthProvider.PROVIDER_ID
+      ],
+    };
+    var app = firebase.initializeApp(config);
+    var auth = app.auth();
+    var ui = new firebaseui.auth.AuthUI(auth);
+
+    ui.start(‘#firebaseui-auth-container’, uiConfig);
+  </script>
+  <script src=”https://www.gstatic.com/firebasejs/live/3.0/firebase-app.js"></script>
+  <script src=”https://www.gstatic.com/firebasejs/live/3.0/firebase-auth.js"></script>
+  <script src=”https://www.gstatic.com/firebasejs/ui/0.4.0/firebase-ui-auth.js"></script>
+  <link type=”text/css” rel=”stylesheet” href=”https://www.gstatic.com/firebasejs/ui/0.4.0/firebase-ui-auth.css" />
+  <script src="app.js"></script>
   <link type="text/css" rel="stylesheet" href="stylesheet.css">
   <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
@@ -9,6 +26,5 @@
      Your app may use that space for branding, controls and other customizations.-->
 <body>
   <img src="launch.png" alt="Paradigm Launchpad Logo" style="left:45px; top:40px; position: absolute; height: 117px">
-  <div id="firebaseui-auth-container"></div>
-  <p style="color: white;" id="loader">Loading...</p>
+  <div id=”firebaseui-auth-container”></div>
 </body
