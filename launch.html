@@ -1,8 +1,9 @@
 <html lang="en">
 <head>
+  <title>Paradigm Launchpad</title>
   <script>
     var uiConfig = {
-      ‘signInSuccessUrl’: ‘<url-to-redirect-to-on-success>’,
+      ‘signInSuccessUrl’: ‘/index.html’,
       ‘signInOptions’: [
         firebase.auth.EmailAuthProvider.PROVIDER_ID
       ],
@@ -27,4 +28,8 @@
 <body>
   <img src="launch.png" alt="Paradigm Launchpad Logo" style="left:45px; top:40px; position: absolute; height: 117px">
   <div id=”firebaseui-auth-container”></div>
+  <form>
+    <input id="email" class="text-field" style="width: 350px;" type="text" class="form-control" placeholder="Email" ng-model="emailText">
+    <input id="password" class="text-field" style="width: 350px;" type="text" class="form-control" placeholder="Password" ng-model="passwordText">
+    <button style="height: 45px; opacity: 0;" type="submit" class="btn btn-default" ng-click="send()">Submit</button>
 </body
