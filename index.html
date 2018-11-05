@@ -1,7 +1,7 @@
 <html lang="en" ng-app="chatApp">
 <head>
-    <meta charset="UTF-8">
-    <title>Paradigm Bread</title>
+  <meta charset="UTF-8">
+  <title>Paradigm Bread</title>
 	<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
 	<script>
 		// Initialize Firebase
@@ -19,8 +19,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 	<script src="app.js"></script>
 	<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+  <link type="text/css" rel="stylesheet" href="stylesheet.css"></style>
 </head>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1040">
   <defs>
     <pattern id="pattern" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 100 100">
       <image width="100" height="100" xlink:href="data:image/png;base64,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"/>
@@ -72,7 +75,7 @@
   </g>
 </svg>
 <body style="background-color: #393939;" ng-controller="ChatController">
-    <div class="chatroom">
+  <div class="chatroom">
 		<p class="chatroom-text" ng-repeat="m in messages" >
 			<span style="font-size: 20px; font-style: bold;">{{m.username}}</span>
 			<span style="color: #3e3e3e; font-style: italic; padding-left: 5px;">{{m.date | date:'medium'}}</span>
@@ -90,88 +93,6 @@
       <button style="height: 45px; opacity: 0;" type="submit" class="btn btn-default" ng-click="send()">Send</button>
     </div>
 	</form>
-  <p style="text-align: center; color: #7B7B7B">(c) 2018 Paradigm Development. All Rights Reserved. Version b1.</p>
+  <p style="text-align: center; color: #7B7B7B">© 2018 Paradigm Development. All Rights Reserved. Version b1.0.</p>
 </body>
 </html>
-
-
-
-<style>
-	.text-field {
-		height: 50px;
-		border-radius: 25px;
-		background-color: #393939;
-		border: 0px;
-		padding-left: 20px;
-		padding-right: 20px;
-		color: white;
-		font-size: 20px;
-		font-family: SFProDisplay-Light, SF Pro Display;
-	}
-
-	.chatroom-text {
-		color: white;
-		font-family: SFProDisplay-Thin, SF Pro Display;
-	}
-
-  .chatroom {
-		overflow-x: hidden;
-		width: 1300px;
-		height: 670px;
-		position: absolute;
-		left: 530px;
-		top: 280px;
-	}
-
-  p {
-    font-family: SFProDisplay-Light, SF Pro Display;
-    font-size: 15px;
-  }
-      .cls-1 {
-        clip-path: url(#clip-BREAD_Bare);
-      }
-      .cls-2 {
-        fill: #1c1c1c;
-      }
-      .cls-10, .cls-11, .cls-3 {
-        fill: #fff;
-      }
-      .cls-3 {
-        font-size: 35px;
-      }
-      .cls-10, .cls-3 {
-        font-family: SFProDisplay-Regular, SF Pro Display;
-      }
-      .cls-4 {
-        fill: #7289da;
-      }
-      .cls-5 {
-        fill: #393939;
-      }
-      .cls-6 {
-        fill: none;
-        stroke: #434343;
-      }
-      .cls-7 {
-        fill: #707070;
-        font-size: 25px;
-      }
-      .cls-7, .cls-9 {
-        font-family: SFProDisplay-Light, SF Pro Display;
-        font-weight: 300;
-      }
-      .cls-8 {
-        fill: url(#pattern);
-      }
-      .cls-9 {
-        fill: #7b7b7b;
-        font-size: 15px;
-      }
-      .cls-10 {
-        font-size: 60px;
-      }
-      .cls-11 {
-        font-size: 45px;
-        font-family: SFProDisplay-Thin, SF Pro Display;
-        font-weight: 200;
-</style>
