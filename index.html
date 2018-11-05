@@ -2,7 +2,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Paradigm Bread</title>
-	<style src="stylesheet.css"></style>
 	<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
 	<script>
 		// Initialize Firebase
@@ -15,19 +14,15 @@
 			messagingSenderId: "85157949430"
 		};
 		firebase.initializeApp(config);
-  </script>
+	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 	<script src="app.js"></script>
 	<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
-  <link rel="icon"
-    type="image/ico"
-    href="/favicon.ico">
 </head>
 <body style="background-color: #393939;" ng-controller="ChatController">
-  <style src="stylesheet.css"></style>
 	<img src="bread.png" alt="Paradigm Bread Logo" style="background-color: #393939; position: absolute; height: 11.5vh">
 	<svg style="width: 72vw; height: 85vh; position: relative; top: 2.5vh; left: 25vw;">
-		<rect style="width: 72vw; height: 85vh; fill: #1c1c1c;" rx="35px" ry="35px"/>
+		<rect style="width: 72vw; height: 85vh; fill: #1c1c1c;" rx="35px" ry="35px"></rect>
 		<h1 style="position: absolute; top: 4vh; left: 27.35vw;">Chat</h1>
 	</svg>
     <div class="chatroom">
@@ -39,13 +34,13 @@
 		</p>
 	</div>
     <form>
-    <div style="position: relative; left:25vw; top:3.5vh;">
-      <input class="text-field" style="width: 350px;" type="text" class="form-control" placeholder="Username" ng-model="usernameText">
-      <input class="text-field" style="width: 690px; left: .25vw;" type="text" class="form-control" placeholder="Type something to send..." ng-model="messageText">
-      <button class="button" style="position: relative; width: 7vh; top: 2.5vh; left: .25vw;" type="submit" ng-click="send()">
-    </div>
+		<div style="position: relative; left:25vw; top:3.5vh;">
+			<input class="text-field" style="width: 350px;" type="text" placeholder="Username" ng-model="usernameText">
+			<input class="text-field" style="width: 690px; left: .25vw;" type="text" placeholder="Message" ng-model="messageText">
+			<button class="button" style="position: relative; width: 7vh; top: 2.5vh; left: .25vw;" type="submit" ng-click="send()">
+		</div>
     </form>
-
+</body>
 
 
 <style>
@@ -93,65 +88,67 @@
 		border-radius: 50px;
 	}
 
-  .cls-1 {
-    clip-path: url(#clip-BREAD_Bare);
-  }
+	.cls-1 {
+		clip-path: url(#clip-BREAD_Bare);
+	}
 
-  .cls-2 {
-    fill: #1c1c1c;
-  }
+	.cls-2 {
+		fill: #1c1c1c;
+	}
 
-  .cls-10, .cls-11, .cls-3 {
-    fill: #fff;
-  }
+	.cls-10, .cls-11, .cls-3 {
+		fill: #fff;
+	}
 
-  .cls-3 {
-    font-size: 35px;
-  }
+	.cls-3 {
+		font-size: 35px;
+	}
 
-  .cls-10, .cls-3 {
-    font-family: SFProDisplay-Regular, SF Pro Display;
-  }
+	.cls-10, .cls-3 {
+		font-family: SFProDisplay-Regular, SF Pro Display;
+	}
 
-  .cls-4 {
-    fill: #7289da;
-  }
+	.cls-4 {
+		fill: #7289da;
+	}
 
-  .cls-5 {
-    fill: #393939;
-  }
+	.cls-5 {
+		fill: #393939;
+	}
 
-  .cls-6 {
-    fill: none;
-    stroke: #434343;
-  }
+	.cls-6 {
+		fill: none;
+		stroke: #434343;
+	}
 
-  .cls-7 {
-    fill: #707070;
-    font-size: 25px;
-  }
+	.cls-7 {
+		fill: #707070;
+		font-size: 25px;
+	}
 
-  .cls-7, .cls-9 {
-    font-family: SFProDisplay-Light, SF Pro Display;
-    font-weight: 300;
-  }
+	.cls-7, .cls-9 {
+		font-family: SFProDisplay-Light, SF Pro Display;
+		font-weight: 300;
+	}
 
-  .cls-8 {
-    fill: url(#pattern);
-  }
+	.cls-8 {
+		fill: url(#pattern);
+	}
 
-  .cls-9 {
-    fill: #7b7b7b;
-    font-size: 15px;
-  }
+	.cls-9 {
+		fill: #7b7b7b;
+		font-size: 15px;
+	}
 
-  .cls-10 {
-    font-size: 60px;
-  }
-    .cls-11 {
-    font-size: 45px;
-    font-family: SFProDisplay-Thin, SF Pro Display;
-    font-weight: 200;
+	.cls-10 {
+		font-size: 60px;
+	}
+	
+	.cls-11 {
+		font-size: 45px;
+		font-family: SFProDisplay-Thin, SF Pro Display;
+		font-weight: 200;
+	}
 </style>
 
 <svg style="position: absolute; top: 0px; left: 0px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080">
