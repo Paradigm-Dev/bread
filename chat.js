@@ -17,11 +17,3 @@ app.controller('ChatController', function($scope, $firebaseArray) {
     }
 
 })
-
-var email = email
-var password = password
-
-firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-   console.log(error.code);
-   console.log(error.message);
-});

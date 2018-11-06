@@ -24,6 +24,20 @@
   top: 280px;
 }
 
+.btnDefault {
+  border-radius: 25px;
+  background-color: #7289da;
+  border-width: 0px;
+  height: 45px;
+}
+
+.btnAlt {
+  border-radius: 25px;
+  background-color: #ffffff;
+  border-width: 0px;
+  height: 45px;
+}
+
 p {
   font-family: SFProDisplay-Light, SF Pro Display;
   font-size: 15px;
