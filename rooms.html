@@ -1,4 +1,4 @@
-<html lang="en" ng-app="chatApp">
+<html lang="en">
 <head>
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -13,14 +13,14 @@
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
         <!-- Title -->
-        <span class="mdl-layout-title">Paradigm Launchpad</span>
+        <span class="mdl-layout-title">Paradigm Bread <i style="vertical-align: middle;" class="material-icons">arrow_right</i> Rooms</span>
         <!-- Add spacer, to align navigation to the right -->
         <div class="mdl-layout-spacer"></div>
         <!-- Navigation. We hide it in small screens. -->
         <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" href="bread.html">Bread</a>
-          <a class="mdl-navigation__link" href="hex.html">Hex</a>
-          <a class="mdl-navigation__link" href="drawer.html">Drawer</a>
+          <a class="mdl-navigation__link" href="bread.html" disabled>Bread</a>
+          <a class="mdl-navigation__link" href="hex.html" disabled>Hex</a>
+          <a class="mdl-navigation__link" href="drawer.html" disabled>Drawer</a>
           <a class="mdl-navigation__link" href="launch.html">Account</a>
         </nav>
         <form>
@@ -75,5 +75,8 @@
           </div>
         </div>
       </div>
+      <button id="btnAdd" style="position: absolute; bottom: 25px; right: 25px;" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">add</i></button>
+      <div class="mdl-tooltip mdl-tooltip--left" data-mdl-for="btnAdd">This feature is not implemented yet!</div>
+
     </main>
   </div>

@@ -9,6 +9,7 @@ var config = {
   storageBucket: "",
   messagingSenderId: "85157949430"
 };
+firebase.initializeApp(config);
 
 // Get elements
 const txtEmail = document.getElementById('txtEmail')
@@ -47,7 +48,7 @@ btnLogout.addEventListener("click", e => {
 // Add a realtime listener
 firebase.auth().onAuthStateChanged(user => {
   if(user) {
-    console.log(firebaseUser);
+    console.log(user);
     btnLogout.classList.remove("hide");
     window.location = "home.html"; // After successful login, user will be redirected to home.html
   } else {
