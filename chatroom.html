@@ -1,0 +1,95 @@
+<html lang="en" ng-app="chatApp">
+<head>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-indigo.min.css"/>
+  <meta charset="UTF-8">
+  <title>Paradigm Bread</title>
+	<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyBLcfwhzN8eAbS7fg1wVx6AIWR4Orz6nr0",
+			authDomain: "ecbm-31cf0.firebaseapp.com",
+			databaseURL: "https://ecbm-31cf0.firebaseio.com",
+			projectId: "ecbm-31cf0",
+			storageBucket: "",
+			messagingSenderId: "85157949430"
+		};
+		firebase.initializeApp(config);
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	<script src="chat.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="stylesheet.css"></link>
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Paradigm Bread <i class="material-icons">arrow_right</i> Rooms <i class="material-icons">arrow_right</i> Chatroom</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="bread.html">Bread</a>
+        <a class="mdl-navigation__link" href="hex.html">Hex</a>
+        <a class="mdl-navigation__link" href="drawer.html">Drawer</a>
+        <a class="mdl-navigation__link" href="launch.html">Account</a>
+      </nav>
+      <form>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+          <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+            <i class="material-icons">search</i>
+          </label>
+          <div class="mdl-textfield__expandable-holder">
+            <input class="mdl-textfield__input" type="search" id="search">
+            <label class="mdl-textfield__label" for="search">Search</label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Menu</span>
+    <nav class="mdl-navigation">
+      <a id="roomLink" class="mdl-navigation__link" href="rooms.html">Rooms</a>
+      <a id="boardLink" class="mdl-navigation__link" href="">Boards</a>
+      <a id="friendLink" class="mdl-navigation__link" href="">Friends</a>
+      <a id="accountLink" class="mdl-navigation__link" href="launch.html">Account</a>
+      <span for="boardLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
+      <span for="friendLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+      <div class="page-content">
+        <div class="chatroom" ng-controller="ChatController">
+          <div class="chatroom-text" ng-repeat="m in messages">
+            <span style="font-size: 20px; font-style: bold;">{{m.username}}</span>
+            <span style="color: #3e3e3e; font-style: italic; padding-left: 5px;">{{m.date | date:'medium'}}</span>
+            <br>
+            <span style="padding-top: 20px;">{{m.message}}</span>
+            <br>
+            <span style="padding-top: 20px;">{{m.image}}</span>
+            <br>
+          </div>
+        </div>
+        <div style="position: absolute; bottom: 25px; left: 25px;">
+          <form>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="username" ng-model="usernameText">
+              <label class="mdl-textfield__label" for="username">Username</label>
+            </div>
+            <div style="position: relative; left: 10px; width: 750px;" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="message" ng-model="messageText">
+              <label class="mdl-textfield__label" for="username">Message</label>
+            </div>
+            <button style="position: relative; left: 10px;" type="submit" ng-click="send()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Send</button>
+          </form>
+
+      </div>
+    </main>
+  </div>

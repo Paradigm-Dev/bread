@@ -1,5 +1,4 @@
-(function() {
-
+var firebase = require("firebase");
 
 // Initialize Firebase
 var config = {
@@ -19,7 +18,7 @@ const btnSignup = document.getElementById('btnSignup')
 const btnLogout = document.getElementById('btnLogout')
 
 // Add login event
-btnLogin.addEventListener('click', e => {
+btnLogin.addEventListener("click", e => {
   // Get email and pass
   const email = txtEmail.value;
   const pass = txtxPassword.value;
@@ -29,8 +28,8 @@ btnLogin.addEventListener('click', e => {
   promise.catch(e => console.log(e.message));
 })
 
-// Add singup event
-btnSignup.addEventListener('click', e => {
+// Add signup event
+btnSignup.addEventListener("click", e => {
   // Get email and pass
   const email = txtEmail.value;
   const pass = txtxPassword.value;
@@ -41,17 +40,18 @@ btnSignup.addEventListener('click', e => {
 })
 
 // Add logout event
-btnLogout.addEventListener('click', e => {
+btnLogout.addEventListener("click", e => {
   firebase.auth().signOut();
 })
 
 // Add a realtime listener
-firebase.auth().onAuthStateChanged(firebaseUser => {
-  if(firebaseUser) {
+firebase.auth().onAuthStateChanged(user => {
+  if(user) {
     console.log(firebaseUser);
+    btnLogout.classList.remove("hide");
+    window.location = "home.html"; // After successful login, user will be redirected to home.html
   } else {
-    console.log('User is not logged in.')
+    console.log("User is not logged in."");
+    btnLogout.classList.add("hide");
   }
 })
-
-}());

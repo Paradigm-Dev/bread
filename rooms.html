@@ -1,25 +1,12 @@
-<html lang="en">
+<html lang="en" ng-app="chatApp">
 <head>
-  <title>Paradigm Launchpad</title>
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-indigo.min.css"/>
-  <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
-  <script>
-		// Initialize Firebase
-		var config = {
-			apiKey: "AIzaSyBLcfwhzN8eAbS7fg1wVx6AIWR4Orz6nr0",
-			authDomain: "ecbm-31cf0.firebaseapp.com",
-			databaseURL: "https://ecbm-31cf0.firebaseio.com",
-			projectId: "ecbm-31cf0",
-			storageBucket: "",
-			messagingSenderId: "85157949430"
-		};
-		firebase.initializeApp(config);
-	</script>
-  <link type="text/css" rel="stylesheet" href="stylesheet.css">
-  <script src="launch.js"></script>
+  <meta charset="UTF-8">
+  <title>Paradigm Bread</title>
+  <link type="text/css" rel="stylesheet" href="stylesheet.css"></link>
 </head>
 <body>
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -61,6 +48,32 @@
       </nav>
     </div>
     <main class="mdl-layout__content">
-        <div class="page-content">
+      <div class="page-content">
+        <style>
+        .demo-card-square.mdl-card {
+          width: 320px;
+          height: 320px;
+          position: relative;
+          top: 25px;
+          left: 25px;
+        }
+        .demo-card-square > .mdl-card__title {
+          color: #fff;
+          background: url('assets/chatroom_back.png') bottom right 15%;
+        }
+        </style>
 
-</body
+        <div class="demo-card-square mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <h2 class="mdl-card__title-text">Chatroom</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            This is the only Room available at the minute. More will be coming soon.
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <a href="chatroom.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Connect</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
