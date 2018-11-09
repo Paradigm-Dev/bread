@@ -8,7 +8,7 @@ app.controller('ChatController', function($scope, $firebaseArray) {
 
     $scope.send = function() {
         document.getElementById("username").value="";
-        document.getElementById("password").value="";
+        document.getElementById("message").value="";
         $scope.messages.$add({
             message: $scope.messageText,
             date: Date.now(),

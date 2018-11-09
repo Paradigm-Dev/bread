@@ -23,8 +23,8 @@
 
 .chatroom {
   overflow-x: hidden;
-  width: 1300px;
-  height: 670px;
+  width: 1890px;
+  height: 75vh;
   position: absolute;
   left: 25px;
   top: 25px;
@@ -50,17 +50,6 @@
 
 .hide {
   visibility: hidden;
-}
-
-p {
-  font-family: SFProDisplay-Light, SF Pro Display;
-  font-size: 15px;
-  position: relative;
-}
-
-h1 {
-  font-family: SFProDisplay-Light, SF Pro Display;
-  color: white;
 }
 
 .square {
