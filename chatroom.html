@@ -30,11 +30,9 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title">Paradigm Bread <i style="vertical-align: middle;" class="material-icons">arrow_right</i> Rooms <i style="vertical-align: middle;" class="material-icons">arrow_right</i> Chatroom</span>
-      <!-- Add spacer, to align navigation to the right -->
+      <span class="mdl-layout-title">Paradigm Bread</span>
+      <span class="mdl-layout-title" style="position: absolute; text-align: center; margin: 0 auto;">Connected to: Chatroom</span>
       <div class="mdl-layout-spacer"></div>
-      <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
         <a class="mdl-navigation__link" href="bread.html">Bread</a>
         <a class="mdl-navigation__link" href="hex.html">Hex</a>
@@ -46,9 +44,9 @@
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Menu</span>
     <nav class="mdl-navigation">
-      <a id="roomLink" class="mdl-navigation__link" href="rooms.html">Rooms</a>
-      <a id="boardLink" class="mdl-navigation__link" href="">Boards</a>
-      <a id="friendLink" class="mdl-navigation__link" href="">Friends</a>
+      <a id="roomLink" class="mdl-navigation__link" href="bread/rooms.html">Rooms</a>
+      <a id="boardLink" class="mdl-navigation__link" href="bread/boards.html">Boards</a>
+      <a id="friendLink" class="mdl-navigation__link" href="bread/friends.html">Friends</a>
       <span for="boardLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
       <span for="friendLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
     </nav>
@@ -68,22 +66,18 @@
             </p>
           </div>
         </div>
-        <div style="position: absolute; bottom: 25px; left: 25px;">
-          <form class="form-group">
-            <span style="white-space: nowrap;">
-              <button id="uploadBtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-button--mini-fab mdl-button--colored" style="background-color: #3F51B5;"><i class="material-icons">add</i></button>
-              <div style="position: relative; left: 10px; width: 750px;" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="username" class="form-control" ng-model="usernameText">
-                <label class="mdl-textfield__label" for="username">Username</label>
-              </div>
-              <div style="position: relative; left: 10px; width: 750px;" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="message" class="form-control" ng-model="messageText">
-                <label class="mdl-textfield__label" for="username">Message</label>
-              </div>
-              <button id="sendBtn" style="position: relative; left: 10px;" type="submit" ng-click="send()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Send</button>
-            </span>
-          </form>
-        </div>
+        <form class="form-group" style="white-space: nowrap; position: absolute; bottom: 25px; left: 25px;">
+          <button id="uploadBtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-button--mini-fab mdl-button--colored" style="background-color: #3F51B5;"><i class="material-icons">add</i></button>
+          <div style="position: relative; left: 10px; width: 750px;" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="username" class="form-control" ng-model="usernameText">
+            <label class="mdl-textfield__label" for="username">Username</label>
+          </div>
+          <div style="position: relative; left: 10px; width: 750px;" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="message" class="form-control" ng-model="messageText">
+            <label class="mdl-textfield__label" for="username">Message</label>
+          </div>
+          <button id="sendBtn" style="position: relative; left: 10px;" type="submit" ng-click="send()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Send</button>
+        </form>
     </main>
   </div>
 </body>

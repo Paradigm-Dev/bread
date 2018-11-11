@@ -12,57 +12,41 @@
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <!-- Title -->
-        <span class="mdl-layout-title">Paradigm Bread <i style="vertical-align: middle;" class="material-icons">arrow_right</i> Rooms</span>
-        <!-- Add spacer, to align navigation to the right -->
+        <span class="mdl-layout-title">Paradigm Bread</span>
         <div class="mdl-layout-spacer"></div>
-        <!-- Navigation. We hide it in small screens. -->
         <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" href="bread.html" disabled>Bread</a>
-          <a class="mdl-navigation__link" href="hex.html" disabled>Hex</a>
-          <a class="mdl-navigation__link" href="drawer.html" disabled>Drawer</a>
-          <a class="mdl-navigation__link" href="launch.html">Account</a>
+          <a class="mdl-navigation__link" href="bread.html">Bread</a>
+          <a class="mdl-navigation__link" href="hex.html">Hex</a>
+          <a class="mdl-navigation__link" href="drawer.html">Drawer</a>
+          <a class="mdl-navigation__link" href="launch.html">Launchpad</a>
         </nav>
-        <form>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-              <i class="material-icons">search</i>
-            </label>
-            <div class="mdl-textfield__expandable-holder">
-              <input class="mdl-textfield__input" type="search" id="search">
-              <label class="mdl-textfield__label" for="search">Search</label>
-            </div>
-          </div>
-        </form>
       </div>
     </header>
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title">Menu</span>
       <nav class="mdl-navigation">
         <a id="roomLink" class="mdl-navigation__link" href="rooms.html">Rooms</a>
-        <a id="boardLink" class="mdl-navigation__link" href="">Boards</a>
-        <a id="friendLink" class="mdl-navigation__link" href="">Friends</a>
-        <a id="accountLink" class="mdl-navigation__link" href="launch.html">Account</a>
+        <a id="boardLink" class="mdl-navigation__link" href="boards.html">Boards</a>
+        <a id="friendLink" class="mdl-navigation__link" href="friends.html">Friends</a>
         <span for="boardLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
         <span for="friendLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
       </nav>
     </div>
     <main class="mdl-layout__content">
       <div class="page-content">
+        <h2 style="margin: 25px;">Rooms</h2>
         <style>
-        .demo-card-square.mdl-card {
-          width: 320px;
-          height: 320px;
-          position: relative;
-          top: 25px;
-          left: 25px;
-        }
-        .demo-card-square > .mdl-card__title {
-          color: #fff;
-          background: url('assets/chatroom_back.png') bottom right 15%;
-        }
+          .demo-card-square.mdl-card {
+            width: 320px;
+            height: 320px;
+            position: relative;
+            margin-left: 25px;
+          }
+          .demo-card-square > .mdl-card__title {
+            color: #fff;
+            background: url('assets/chatroom_back.png') bottom right 15%;
+          }
         </style>
-
         <div class="demo-card-square mdl-card mdl-shadow--2dp">
           <div class="mdl-card__title mdl-card--expand">
             <h2 class="mdl-card__title-text">Chatroom</h2>
