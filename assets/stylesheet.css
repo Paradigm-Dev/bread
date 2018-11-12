@@ -58,50 +58,7 @@
   background-color: #555;
 }
 
-    .cls-1 {
-      clip-path: url(#clip-BREAD_Bare);
-    }
-    .cls-2 {
-      fill: #1c1c1c;
-    }
-    .cls-10, .cls-11, .cls-3 {
-      fill: #fff;
-    }
-    .cls-3 {
-      font-size: 35px;
-    }
-    .cls-10, .cls-3 {
-      font-family: SFProDisplay-Regular, SF Pro Display;
-    }
-    .cls-4 {
-      fill: #7289da;
-    }
-    .cls-5 {
-      fill: #393939;
-    }
-    .cls-6 {
-      fill: none;
-      stroke: #434343;
-    }
-    .cls-7 {
-      fill: #707070;
-      font-size: 25px;
-    }
-    .cls-7, .cls-9 {
-      font-family: SFProDisplay-Light, SF Pro Display;
-      font-weight: 300;
-    }
-    .cls-8 {
-      fill: url(#pattern);
-    }
-    .cls-9 {
-      fill: #7b7b7b;
-      font-size: 15px;
-    }
-    .cls-10 {
-      font-size: 60px;
-    }
-    .cls-11 {
-      font-size: 45px;
-      font-family: SFProDisplay-Thin, SF Pro Display;
-      font-weight: 200;
+.drawer-label {
+  text-align: center;
+  font-size: 17px;
+}
