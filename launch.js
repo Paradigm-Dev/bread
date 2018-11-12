@@ -50,7 +50,7 @@ firebase.auth().onAuthStateChanged(user => {
   if(user) {
     console.log(user);
     btnLogout.classList.remove("hide");
-    window.location = "home.html"; // After successful login, user will be redirected to home.html
+    window.location = "/bread/rooms.html"; // After successful login, user will be redirected to home.html
   } else {
     console.log("User is not logged in."");
     btnLogout.classList.add("hide");
