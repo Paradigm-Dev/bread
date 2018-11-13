@@ -77,5 +77,6 @@ footer {
   width: 100vw;
   background-color: var(--clrBack);
   color: white;
-  vertical-align: center;
+  vertical-align: middle;
+  text-align: center;
 }
