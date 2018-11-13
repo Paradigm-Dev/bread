@@ -70,11 +70,12 @@
   font-size: 17px;
 }
 
-.footer {
+footer {
   position: fixed;
   bottom: 0px;
   left: 0px;
   width: 100vw;
   background-color: var(--clrBack);
   color: white;
+  vertical-align: center;
 }
