@@ -54,9 +54,11 @@
       <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
         <div class="chatroom">
           <div ng-repeat="m in messages">
-            <h4>{{m.username}}<span style="color: #3e3e3e; font-style: italic; padding-left: 5px;" class="mdl-typography--body-1">{{m.date | date:'medium'}}</span></h4>
-            <span class="mdl-typography--body-1" style="padding-top: 20px;">{{m.message}}</span>
-            <span style="padding-top: 20px;">{{m.image}}</span>
+            <div style="padding-left: 6px;">
+              <h4>{{m.username}}<span style="color: #3e3e3e; font-style: italic; padding-left: 5px;" class="mdl-typography--body-1">{{m.date | date:'medium'}}</span></h4>
+              <span style="line-height: normal;" class="mdl-typography--body-1" style="padding-top: 10px;">{{m.message}}</span>
+              <span style="padding-top: 10px;">{{m.image}}</span>
+            </div>
             <hr>
           </div>
         </div>
