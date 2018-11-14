@@ -83,3 +83,22 @@ footer {
 .friendChip {
   margin-left: 25px;
 }
+
+@keyframes profileBtn {
+  from{transform: rotate(0deg);}
+  to{transform: rotate(180deg);}
+}
+
+.profileBtn {
+
+}
+
+.profileBtn:active {
+  animation-name: profileBtn;
+}
+
+.bottomPrgs {
+  position: absolute;
+  bottom: 20px;
+  width: 100vw;
+}

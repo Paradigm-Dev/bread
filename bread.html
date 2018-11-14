@@ -12,34 +12,57 @@
 <body>
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
-      <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">Paradigm Bread</span>
-      </div>
+      <div class="mdl-layout__header-row"><span class="mdl-layout-title">Paradigm Bread</span></div>
     </header>
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title">Menu</span>
       <nav class="mdl-navigation">
-        <a id="roomLink" class="mdl-navigation__link" href="./bread/rooms.html">Rooms</a>
-        <a id="boardLink" class="mdl-navigation__link" href="./bread/boards.html">Boards</a>
-        <a id="friendLink" class="mdl-navigation__link" href="./bread/friends.html">Friends</a>
+        <a id="roomLink" class="mdl-navigation__link" href="./../bread/rooms.html">Rooms</a>
+        <a id="boardLink" class="mdl-navigation__link" href="./../bread/boards.html">Boards</a>
+        <a id="friendLink" class="mdl-navigation__link" href="./../bread/friends.html">Friends</a>
         <span for="boardLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
         <span for="friendLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
         <hr>
       </nav>
       <span class="mdl-layout-title">Apps</span>
       <nav class="mdl-navigation">
-        <a id="breadLink" class="mdl-navigation__link" href="./bread.html">Bread</a>
-        <a id="hexLink" class="mdl-navigation__link" href="./hex.html">Hex</a>
-        <a id="drawerLink" class="mdl-navigation__link" href="./drawer.html">Drawer</a>
-        <a id="launchLink" class="mdl-navigation__link" href="./launch.html">Launchpad</a>
+        <a id="breadLink" class="mdl-navigation__link" href="./../bread.html">Bread</a>
+        <a id="hexLink" class="mdl-navigation__link" href="./../hex.html">Hex</a>
+        <a id="drawerLink" class="mdl-navigation__link" href="./../drawer.html">Drawer</a>
+        <a id="launchLink" class="mdl-navigation__link" href="./../launch.html">Launchpad</a>
         <span for="hexLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
         <span for="drawerLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
       </nav>
     </div>
     <main class="mdl-layout__content">
-      <div style="height: 70vh; background: url(./assets/bread_back.jpg)" class="page-content">
-        <footer>© 2018 Paradigm Development. All Rights Reserved. Version 0.0.3.0.1β.</footer>
+      <div class="page-content">
+        <style>
+          .demo-card-square.mdl-card {
+            width: 320px;
+            height: 320px;
+            position: relative;
+            margin: 25px;
+          }
+          .demo-card-square > .mdl-card__title {
+            color: #fff;
+            background: url('./assets/chatroom_back.png') bottom right 15%;
+          }
+        </style>
+        <div class="demo-card-square mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <h2 class="mdl-card__title-text">Chatroom</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            This is the only Room available at the minute. More will be coming soon.
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <a href="./bread/chatroom.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Connect</a>
+          </div>
+        </div>
       </div>
+      <button id="btnAdd" style="position: absolute; bottom: 45px; right: 25px;" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">add</i></button>
+      <div class="mdl-tooltip mdl-tooltip--left" data-mdl-for="btnAdd">This feature is not implemented yet!</div>
+      <footer>© 2018 Paradigm Development. All Rights Reserved. Version 0.0.3.0.1β.</footer>
     </main>
   </div>
 </body>
