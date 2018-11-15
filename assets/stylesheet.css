@@ -5,6 +5,42 @@
   --clrAlt: ;
 }
 
+h1 {
+  font-family: 'Roboto-Light', sans-serif;
+  font-size: 6rem;
+  letter-spacing: -0.09375rem;
+}
+
+h2 {
+  font-family: 'Roboto-Light', sans-serif;
+  font-size: 3.75rem;
+  letter-spacing: -0.03125rem;
+}
+
+h3 {
+  font-family: 'Roboto-Regular', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 0rem;
+}
+
+h4 {
+  font-family: 'Roboto-Regular', sans-serif;
+  font-size: 2.125rem;
+  letter-spacing: 0.015625rem;
+}
+
+h5 {
+  font-family: 'Roboto-Regular', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0rem;
+}
+
+h6 {
+  font-family: 'Roboto-Medium', sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.009375rem;
+}
+
 body {
   background-color: silver;
 

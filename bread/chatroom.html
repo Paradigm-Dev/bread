@@ -28,15 +28,22 @@
   <link type="text/css" rel="stylesheet" href="./../assets/stylesheet.css"></link>
 </head>
 <body ng-controller="ChatController">
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--tabs">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
         <span class="mdl-layout-title">Paradigm Bread</span>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+          <div id="notifications" class="material-icons mdl-badge mdl-badge--overlap" data-badge="#">notifications</div>
+          <div id="profile" style="margin-left: 24px;" class="material-icons">person</div>
+          <span for="notifications" class="mdl-tooltip">This feature has not been implemented yet!</span>
+          <span for="profile" class="mdl-tooltip">This feature has not been implemented yet!</span>
+        </nav>
       </div>
       <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-        <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Board 1</a>
-        <a href="#fixed-tab-2" class="mdl-layout__tab">Board 2</a>
-        <a href="#fixed-tab-3" class="mdl-layout__tab">Board 3</a>
+        <a href="#tab-1" class="mdl-layout__tab is-active">Board 1</a>
+        <a href="#tab-2" class="mdl-layout__tab">Board 2</a>
+        <a disabled href="#tab-3" class="mdl-layout__tab">Board 3</a>
       </div>
     </header>
     <div class="mdl-layout__drawer">
@@ -49,10 +56,11 @@
         <a id="launchLink" class="mdl-navigation__link" href="./../launch.html">Launchpad</a>
         <span for="hexLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
         <span for="drawerLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
+        <span for="launchLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
       </nav>
     </div>
     <main class="mdl-layout__content">
-      <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+      <section class="mdl-layout__tab-panel is-active" id="tab-1">
         <div class="chatroom">
           <div ng-repeat="m in messages">
             <div style="padding-left: 6px;">
@@ -78,7 +86,7 @@
         <div id="p2" class="bottomPrgs mdl-progress mdl-js-progress mdl-progress--indeterminate"></div>
         <footer>© 2018 Paradigm Development. All Rights Reserved. Version 0.0.3.0.1β.</footer>
       </section>
-      <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+      <section class="mdl-layout__tab-panel" id="tab-2">
         <div style="text-align: center; padding-top: 15vh;">
           <h2>Multiple Boards has not been implemented yet!</h2>
           <p>But it is planned for the future!</p>
@@ -92,7 +100,7 @@
         </script>
         <footer>© 2018 Paradigm Development. All Rights Reserved. Version 0.0.3.0.1β.</footer>
       </section>
-      <section class="mdl-layout__tab-panel" id="fixed-tab-3">
+      <section class="mdl-layout__tab-panel" id="tab-3">
         <div style="text-align: center; padding-top: 15vh;">
           <h2>Multiple Boards has not been implemented yet!</h2>
           <p>But it is planned for the future!</p>
