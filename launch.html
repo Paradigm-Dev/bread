@@ -148,6 +148,7 @@
       firebase.auth().onAuthStateChanged(function(user) {
         // [START_EXCLUDE silent]
         document.getElementById('quickstart-verify-email').disabled = true;
+
         // [END_EXCLUDE]
         if (user) {
           // User is signed in.
@@ -158,10 +159,18 @@
           var isAnonymous = user.isAnonymous;
           var uid = user.uid;
           var providerData = user.providerData;
+          var phoneNumber = user.phoneNumber;
           // [START_EXCLUDE]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
           document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+          document.getElementById("email").innerHTML = "Email: " + email;
+          document.getElementById("phone").innerHTML = "Phone Number: " + phoneNumber;
+          document.getElementById("username").innerHTML = "Username: " + displayName;
+          document.getElementById("emailVerified").innerHTML = "Email Verified?: " + emailVerified;
+          document.getElementById("profilePic").innerHTML = "Profile Picture: " + photoURL;
+
+
           if (!emailVerified) {
             document.getElementById('quickstart-verify-email').disabled = false;
           }
@@ -171,7 +180,7 @@
           // [START_EXCLUDE]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
           document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-          document.getElementById('quickstart-account-details').textContent = 'null';
+          document.getElementById('quickstart-account-details').textContent = 'Error. User details not available. User is not signed in.';
           // [END_EXCLUDE]
         }
         // [START_EXCLUDE silent]
@@ -235,16 +244,23 @@
           <button disabled class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" id="quickstart-sign-in" name="signin">Sign In</button>
           &nbsp;&nbsp;&nbsp;
           <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="quickstart-sign-up" name="signup">Sign Up</button>
-          &nbsp;&nbsp;&nbsp;
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" disabled id="quickstart-verify-email" name="verify-email">Send Email Verification</button>
-          &nbsp;&nbsp;&nbsp;
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="quickstart-password-reset" name="verify-email">Send Password Reset Email</button>
-          <!-- Container where we'll display the user details -->
           <div class="quickstart-user-details-container">
-            Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-            <div>Firebase auth <code>currentUser</code> object value:</div>
-            <pre><code id="quickstart-account-details">null</code></pre>
+            <br>
+            <p>Launchpad status: <span id="quickstart-sign-in-status">Unknown</span></p>
+            <p id="email">Email: unavailable</p>
+            <p id="phone">Phone Number: unavailable</p>
+            <p id="username">Username: unavailable</p>
+            <p id="emailVerified">Email Verified?: unavailable</p>
+            <p id="profilePic">Profile Picture: unavailable</p>
+            <h5>Advanced Account Details</h5>
+            <pre><p id="quickstart-account-details"></p></pre>
           </div>
+          <h5>Advanced Account Settings</h5>
+          <button onclick="user.delete()" style="background-color: #F44336;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Delete Account</button>
+          &nbsp;&nbsp;&nbsp;
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" disabled id="quickstart-verify-email" name="verify-email">Verify Email</button>
+          &nbsp;&nbsp;&nbsp;
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="quickstart-password-reset" name="verify-email">Reset Password</button>
         </div>
       </div>
     </main>
