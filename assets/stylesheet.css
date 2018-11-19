@@ -168,3 +168,11 @@ footer {
 hr {
   border-color: gray;
 }
+
+#loader {
+  position: absolute;
+  margin-top: 15vh;
+  text-align: center;
+  height: 50px;
+  width: 50px;
+}
