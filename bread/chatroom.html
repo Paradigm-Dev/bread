@@ -84,6 +84,15 @@
             <label class="mdl-textfield__label" for="username">Message</label>
           </div>
           <button id="sendBtn" style="position: relative; left: 10px;" type="submit" ng-click="send()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Send</button>
+          <script>
+            document.getElementById("message")
+            .addEventListener("keyup", function(event) {
+              event.preventDefault();
+              if (event.keyCode === 13) {
+                document.getElementById("sendBtn").click();
+              }
+            });
+            </script>
         </form>
         <div id="p2" class="bottomPrgs mdl-progress mdl-js-progress mdl-progress--indeterminate"></div>
         <footer>© 2018 Paradigm Development. All Rights Reserved. Version 0.0.3.0.1β.</footer>
