@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="chatApp">
 <head>
+  <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+  <script>
+    var config = {
+      apiKey: "AIzaSyBLcfwhzN8eAbS7fg1wVx6AIWR4Orz6nr0",
+      authDomain: "ecbm-31cf0.firebaseapp.com",
+      databaseURL: "https://ecbm-31cf0.firebaseio.com",
+      projectId: "ecbm-31cf0",
+      storageBucket: "",
+      messagingSenderId: "85157949430"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="./../script/launch.js"></script>
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-indigo.min.css"/>
   <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
   <title>Paradigm Bread</title>
-  <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
-	<script>
-		var config = {
-			apiKey: "AIzaSyBLcfwhzN8eAbS7fg1wVx6AIWR4Orz6nr0",
-			authDomain: "ecbm-31cf0.firebaseapp.com",
-			databaseURL: "https://ecbm-31cf0.firebaseio.com",
-			projectId: "ecbm-31cf0",
-			storageBucket: "",
-			messagingSenderId: "85157949430"
-		};
-		firebase.initializeApp(config);
-	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 	<script src="./../assets/chat.js"></script>
 	<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
@@ -35,7 +36,11 @@
         <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation">
           <div id="notifications" class="material-icons mdl-badge mdl-badge--overlap" data-badge="#">notifications</div>
-          <div id="profile" style="margin-left: 24px;" class="material-icons">person</div>
+          <button id="demo-menu-lower-right" style="margin-left: 24px;" class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">person</i></button>
+          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"for="demo-menu-lower-right">
+            <li href="./../launch.html" class="mdl-menu__item"><a href="./../launch.html">Settings</a></li>
+            <li onclick="firebase.auth().signOut()" class="mdl-menu__item">Logout</li>
+          </ul>
           <span for="notifications" class="mdl-tooltip">This feature has not been implemented yet!</span>
           <span for="profile" class="mdl-tooltip">This feature has not been implemented yet!</span>
         </nav>
