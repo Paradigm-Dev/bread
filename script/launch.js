@@ -1,42 +1,42 @@
 /**
  * Handles the sign in button press.
  */
-function toggleSignIn() {
-  if (firebase.auth().currentUser) {
-    // [START signout]
-    firebase.auth().signOut();
-    // [END signout]
-  } else {
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
-    if (email.length < 4) {
-      alert('Please enter an email address.');
-      return;
-    }
-    if (password.length < 4) {
-      alert('Please enter a password.');
-      return;
-    }
-    // Sign in with email and pass.
-    // [START authwithemail]
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // [START_EXCLUDE]
-      if (errorCode === 'auth/wrong-password') {
-        alert('Wrong password.');
-      } else {
-        alert(errorMessage);
-      }
-      console.log(error);
-      document.getElementById('quickstart-sign-in').disabled = false;
-      // [END_EXCLUDE]
-    });
-    // [END authwithemail]
-  }
-  document.getElementById('quickstart-sign-in').disabled = true;
-}
+ function toggleSignIn() {
+   if (firebase.auth().currentUser) {
+     // [START signout]
+     firebase.auth().signOut();
+     // [END signout]
+   } else {
+     var email = document.getElementById('email').value;
+     var password = document.getElementById('password').value;
+     if (email.length < 4) {
+       alert('Please enter an email address.');
+       return;
+     }
+     if (password.length < 4) {
+       alert('Please enter a password.');
+       return;
+     }
+     // Sign in with email and pass.
+     // [START authwithemail]
+     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+       // Handle Errors here.
+       var errorCode = error.code;
+       var errorMessage = error.message;
+       // [START_EXCLUDE]
+       if (errorCode === 'auth/wrong-password') {
+         alert('Wrong password.');
+       } else {
+         alert(errorMessage);
+       }
+       console.log(error);
+       document.getElementById('quickstart-sign-in').disabled = false;
+       // [END_EXCLUDE]
+     });
+     // [END authwithemail]
+   }
+   document.getElementById('quickstart-sign-in').disabled = true;
+ }
 
 /**
  * Handles the sign up button press.
@@ -108,6 +108,22 @@ function sendPasswordReset() {
   // [END sendpasswordemail];
 }
 
+function deleteUser() {
+  firebase.auth().currentUser.delete().then(function() {
+    alert('User account has been deleted.')
+  }).catch(function(error) {
+    // An error happened.
+  });
+}
+
+function editAccount() {
+  firebase.auth().currentUser.updateProfile({displayName: document.getElementById('username').value,}).then(function() {
+    alert('Username changed')
+  }).catch(function(error) {
+    // An error happened.
+  });
+}
+
 /**
  * initApp handles setting up UI event listeners and registering Firebase auth listeners:
  *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
@@ -119,11 +135,10 @@ function initApp() {
   firebase.auth().onAuthStateChanged(function(user) {
     // [START_EXCLUDE silent]
     document.getElementById('quickstart-verify-email').disabled = true;
-
     // [END_EXCLUDE]
     if (user) {
       // User is signed in.
-      var displayName = user.displayName;
+      var username = user.displayName;
       var email = user.email;
       var emailVerified = user.emailVerified;
       var photoURL = user.photoURL;
@@ -134,13 +149,11 @@ function initApp() {
       // [START_EXCLUDE]
       document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
       document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-      document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
-      document.getElementById("email").innerHTML = "Email: " + email;
-      document.getElementById("phone").innerHTML = "Phone Number: " + phoneNumber;
-      document.getElementById("username").innerHTML = "Username: " + displayName;
-      document.getElementById("emailVerified").innerHTML = "Email Verified?: " + emailVerified;
-      document.getElementById("profilePic").innerHTML = "Profile Picture: " + photoURL;
-
+      document.getElementById('email').innerHTML = "Email: " + email;
+      document.getElementById('phone').innerHTML = "Phone Number: " + phoneNumber;
+      document.getElementById('username').innerHTML = "Username: " + username;
+      document.getElementById('emailVerified').innerHTML = "Email Verified?: " + emailVerified;
+      document.getElementById('profilePic').innerHTML = "Profile Picture: " + photoURL;
 
       if (!emailVerified) {
         document.getElementById('quickstart-verify-email').disabled = false;
@@ -151,7 +164,6 @@ function initApp() {
       // [START_EXCLUDE]
       document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
       document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-      document.getElementById('quickstart-account-details').textContent = 'Error. User details not available. User is not signed in.';
       // [END_EXCLUDE]
     }
     // [START_EXCLUDE silent]

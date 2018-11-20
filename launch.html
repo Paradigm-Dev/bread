@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Paradigm Launchpad</title>
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-indigo.min.css"/>
   <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
   <script>
     // Initialize Firebase
@@ -19,8 +14,12 @@
     };
     firebase.initializeApp(config);
   </script>
+  <title>Paradigm Launchpad</title>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-indigo.min.css"/>
   <link type="text/css" rel="stylesheet" href="./assets/stylesheet.css"></link>
-  <script src="./assets/launch.js"></script>
   <link rel="icon" href="./assets/launchfavicon.ico" type="image/x-icon"/>
   <script src="/__/firebase/5.5.7/firebase-app.js"></script>
   <script src="/__/firebase/5.5.7/firebase-auth.js"></script>
@@ -67,7 +66,7 @@
           <br>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="password" id="password" name="password">
-            <label class="mdl-textfield__label" for="email">Password</label>
+            <label class="mdl-textfield__label" for="password">Password</label>
           </div>
           <br>
           <button disabled class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" id="quickstart-sign-in" name="signin">Sign In</button>
@@ -81,32 +80,16 @@
             <p id="username">Username: unavailable</p>
             <p id="emailVerified">Email Verified?: unavailable</p>
             <p id="profilePic">Profile Picture: unavailable</p>
-
-            <button id="show-dialog" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Advannced Account Details</button>
-            <dialog style="width: 750px; text-align: left; overflow-x: hidden;" class="mdl-dialog">
-              <div class="mdl-dialog__content">
-                <pre><p id="quickstart-account-details"></p></pre>
-              </div>
-              <div class="mdl-dialog__actions">
-                <button type="button" class="mdl-button close">Close</button>
-              </div>
-            </dialog>
-            <script>
-            var dialog = document.querySelector('dialog');
-            var showDialogButton = document.querySelector('#show-dialog');
-            if (! dialog.showModal) {
-              dialogPolyfill.registerDialog(dialog);
-            }
-            showDialogButton.addEventListener('click', function() {
-              dialog.showModal();
-            });
-            dialog.querySelector('.close').addEventListener('click', function() {
-              dialog.close();
-            });
-          </script>
-        </div>
+          </div>
+          <h5>Account Settings</h5>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="username" name="username">
+            <label class="mdl-textfield__label" for="username">Username</label>
+          </div>
+          <br>
+          <button onclick="editAccount()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">Update Account</button>
           <h5>Advanced Account Settings</h5>
-          <button onclick="user.delete()" style="background-color: #F44336;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Delete Account</button>
+          <button onclick="deleteUser()" style="background-color: #F44336;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Delete Account</button>
           &nbsp;&nbsp;&nbsp;
           <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" disabled id="quickstart-verify-email" name="verify-email">Verify Email</button>
           &nbsp;&nbsp;&nbsp;

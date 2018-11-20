@@ -1,6 +1,6 @@
 var pageLoad;
 
-function myFunction() {
+function pageLoader() {
   pageLoad = setTimeout(showPage, 3000);
 }
 

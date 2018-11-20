@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="chatApp">
 <head>
+  <!--Scripts-->
   <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
   <script>
     var config = {
@@ -13,22 +14,24 @@
     };
     firebase.initializeApp(config);
   </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+  <script src="./../script/chat.js"></script>
+  <script src="./../script/loader.js"></script>
   <script src="./../script/launch.js"></script>
+  <!--Styles-->
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-indigo.min.css"/>
-  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-  <title>Paradigm Bread</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-	<script src="./../assets/chat.js"></script>
-	<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
-  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
-  <script src="./../script/loader.js"></script>
   <link type="text/css" rel="stylesheet" href="./../assets/stylesheet.css"></link>
   <link rel="icon" href="./../assets/breadfavicon.ico" type="image/x-icon"/>
+  <!--Other-->
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paradigm Bread</title>
 </head>
-<body onload="myFunction()" ng-controller="ChatController">
+<body onload="pageLoader()" ng-controller="ChatController">
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--tabs">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
@@ -67,7 +70,9 @@
     </div>
     <main class="mdl-layout__content">
       <section class="mdl-layout__tab-panel is-active" id="general">
-        <div id="loader" class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+        <div class="loader">
+          <div id="loader" class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+        </div>
         <div id="divLoad" style="display:none;" class="chatroom">
           <div ng-repeat="m in messages">
             <div style="padding-left: 6px;">

@@ -5,89 +5,62 @@
   --clrAlt: ;
 }
 
-h1 {
+body {
   font-family: 'Roboto-Light', sans-serif;
+  background-color: silver;
+}
+
+h1 {
   font-size: 6rem;
   letter-spacing: -0.09375rem;
 }
 
 h2 {
-  font-family: 'Roboto-Light', sans-serif;
   font-size: 3.75rem;
   letter-spacing: -0.03125rem;
 }
 
 h3 {
-  font-family: 'Roboto-Regular', sans-serif;
   font-size: 3rem;
   letter-spacing: 0rem;
 }
 
 h4 {
-  font-family: 'Roboto-Regular', sans-serif;
   font-size: 2.125rem;
   letter-spacing: 0.015625rem;
 }
 
 h5 {
-  font-family: 'Roboto-Regular', sans-serif;
   font-size: 1.5rem;
   letter-spacing: 0rem;
 }
 
 h6 {
-  font-family: 'Roboto-Medium', sans-serif;
   font-size: 1.25rem;
   letter-spacing: 0.009375rem;
 }
 
-body {
-  background-color: silver;
+/* Scrollbar */
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
 
-}
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgba(241, 241, 241, 0.25);
+  }
 
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: rgba(241, 241, 241, 0.25);
-}
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.text-field {
-  height: 50px;
-  border-radius: 25px;
-  border: 0px;
-  padding-left: 20px;
-  padding-right: 20px;
-  color: white;
-  font-size: 20px;
-  font-family: SFProDisplay-Light, SF Pro Display;
-}
-.text-fieldDef {
-  background-color: #393939;
-}
-
-.text-fieldAlt {
-  background-color: #1c1c1c;
-}
-
-.chatroom-text {
-  color: black;
-  font-family: SFProDisplay-Thin, SF Pro Display;
-}
 
 .chatroom {
   overflow-x: hidden;
@@ -96,34 +69,6 @@ body {
   position: absolute;
   left: 25px;
   top: 25px;
-}
-
-.btnDefault {
-  background-color: #7289da;
-  color: white;
-}
-
-.btnAlt {
-  background-color: #ffffff;
-}
-
-.btn {
-  font-family: SFProDisplay-Thin, SF Pro Display;
-  font-size: 20px;
-  height: 45px;
-  border-width: 0px;
-  border-radius: 25px;
-  position: relative;
-}
-
-.hide {
-  visibility: hidden;
-}
-
-.square {
-  height: 50px;
-  width: 50px;
-  background-color: #555;
 }
 
 .drawer-label {
@@ -145,19 +90,6 @@ footer {
   margin-left: 25px;
 }
 
-@keyframes profileBtn {
-  from{transform: rotate(0deg);}
-  to{transform: rotate(180deg);}
-}
-
-.profileBtn {
-
-}
-
-.profileBtn:active {
-  animation-name: profileBtn;
-}
-
 .bottomPrgs {
   position: absolute;
   bottom: 20px;
@@ -169,10 +101,16 @@ hr {
   border-color: gray;
 }
 
+.loader {
+  position: relative;
+  margin-top: 20vh;
+  text-align: center;
+}
+
 #loader {
   position: absolute;
-  margin-top: 15vh;
-  text-align: center;
   height: 50px;
   width: 50px;
+  text-align: center;
+  vertical-align: middle;
 }
