@@ -117,7 +117,7 @@ function deleteUser() {
 }
 
 function editAccount() {
-  firebase.auth().currentUser.updateProfile({displayName: document.getElementById('username').value,}).then(function() {
+  firebase.auth().currentUser.updateProfile({displayName: document.getElementById('username').value}).then(function() {
     alert('Username changed')
   }).catch(function(error) {
     // An error happened.
@@ -142,9 +142,6 @@ function initApp() {
       var email = user.email;
       var emailVerified = user.emailVerified;
       var photoURL = user.photoURL;
-      var isAnonymous = user.isAnonymous;
-      var uid = user.uid;
-      var providerData = user.providerData;
       var phoneNumber = user.phoneNumber;
       // [START_EXCLUDE]
       document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
