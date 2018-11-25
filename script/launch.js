@@ -130,6 +130,11 @@ function editAccount() {
  *    out, and that is where we update the UI.
  */
 function initApp() {
+  if (firebase.auth().currentUser) {
+    document.getElementById('account-details').style.display = "none";
+  } else {
+    document.getElementById('account-details').style.display = "block";
+  }
   // Listening for auth state changes.
   // [START authstatelistener]
   firebase.auth().onAuthStateChanged(function(user) {

@@ -72,28 +72,30 @@
           <button disabled class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" id="quickstart-sign-in" name="signin">Sign In</button>
           &nbsp;&nbsp;&nbsp;
           <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="quickstart-sign-up" name="signup">Sign Up</button>
-          <div class="quickstart-user-details-container">
+          <div id="account-details">
+            <div class="quickstart-user-details-container">
+              <br>
+              <p>Launchpad status: <span id="quickstart-sign-in-status">Unknown</span></p>
+              <p id="email">Email: unavailable</p>
+              <p id="phone">Phone Number: unavailable</p>
+              <p id="username">Username: unavailable</p>
+              <p id="emailVerified">Email Verified?: unavailable</p>
+              <p id="profilePic">Profile Picture: unavailable</p>
+            </div>
+            <h5>Account Settings</h5>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="username" name="username">
+              <label class="mdl-textfield__label" for="username">Username</label>
+            </div>
             <br>
-            <p>Launchpad status: <span id="quickstart-sign-in-status">Unknown</span></p>
-            <p id="email">Email: unavailable</p>
-            <p id="phone">Phone Number: unavailable</p>
-            <p id="username">Username: unavailable</p>
-            <p id="emailVerified">Email Verified?: unavailable</p>
-            <p id="profilePic">Profile Picture: unavailable</p>
+            <button onclick="editAccount()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">Update Account</button>
+            <h5>Advanced Account Settings</h5>
+            <button onclick="deleteUser()" style="background-color: #F44336;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Delete Account</button>
+            &nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" disabled id="quickstart-verify-email" name="verify-email">Verify Email</button>
+            &nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="quickstart-password-reset" name="verify-email">Reset Password</button>
           </div>
-          <h5>Account Settings</h5>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="username" name="username">
-            <label class="mdl-textfield__label" for="username">Username</label>
-          </div>
-          <br>
-          <button onclick="editAccount()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">Update Account</button>
-          <h5>Advanced Account Settings</h5>
-          <button onclick="deleteUser()" style="background-color: #F44336;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Delete Account</button>
-          &nbsp;&nbsp;&nbsp;
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" disabled id="quickstart-verify-email" name="verify-email">Verify Email</button>
-          &nbsp;&nbsp;&nbsp;
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="quickstart-password-reset" name="verify-email">Reset Password</button>
         </div>
       </div>
     </main>
