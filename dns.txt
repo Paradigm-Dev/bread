@@ -3,6 +3,3 @@
  A 3600 185.199.109.153
  A 3600 185.199.111.153
 www CNAME 3600 paradigm-dev.github.io
- TXT 3600 google-site-verification=93j4KLyN1sBnv0SbODnd6VoaTV03fd_yca3UeBJ-MdU
- TXT 3600 v=spf1 include:_spf.firebasemail.com ~all
- TXT 3600 firebase=ecbm-31cf0
