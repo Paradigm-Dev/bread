@@ -74,7 +74,7 @@ footer {
   bottom: 0px;
   left: 0px;
   width: 100vw;
-  background-color: var(--clrBack);
+  background-color: #242424;
   color: white;
   vertical-align: middle;
   text-align: center;
@@ -114,7 +114,7 @@ main, #messages-card {
   padding-bottom: 0;
 }
 #messages-card-container {
-  height: calc(100% - 35px);
+  height: calc(100% - 54px);
   padding-bottom: 0;
 }
 #messages-card {
