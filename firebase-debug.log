@@ -1,0 +1,21 @@
+[debug] [2018-12-05T20:07:47.683Z] ----------------------------------------------------------------------
+[debug] [2018-12-05T20:07:47.695Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\aidan\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2018-12-05T20:07:47.696Z] CLI Version:   6.1.2
+[debug] [2018-12-05T20:07:47.696Z] Platform:      win32
+[debug] [2018-12-05T20:07:47.696Z] Node Version:  v11.2.0
+[debug] [2018-12-05T20:07:47.697Z] Time:          Wed Dec 05 2018 15:07:47 GMT-0500 (Eastern Standard Time)
+[debug] [2018-12-05T20:07:47.697Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-12-05T20:07:47.764Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-12-05T20:07:47.767Z] > authorizing via signed-in user
+[debug] [2018-12-05T20:07:47.768Z] [iam] checking project paradigm-a1bc9 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2018-12-05T20:07:47.777Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-12-05T20:07:47.778Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2018-12-05T20:07:47.966Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-05T20:07:47.994Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/paradigm-a1bc9:testIamPermissions  
+
+[debug] [2018-12-05T20:07:48.141Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-05T20:07:48.142Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/paradigm-a1bc9  
+ 
+[debug] [2018-12-05T20:07:48.421Z] <<< HTTP RESPONSE 200

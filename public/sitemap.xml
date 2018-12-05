@@ -1,52 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://www.theparadigm.ga/</loc>
-  <lastmod>2018-12-05T12:18:40+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://www.theparadigm.ga/index.html</loc>
-  <lastmod>2018-12-05T12:18:40+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.theparadigm.ga/bread.html</loc>
-  <lastmod>2018-12-05T12:18:40+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.theparadigm.ga/hex.html</loc>
-  <lastmod>2018-12-05T12:18:40+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.theparadigm.ga/drawer.html</loc>
-  <lastmod>2018-12-05T12:18:41+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.theparadigm.ga/launch.html</loc>
-  <lastmod>2018-12-05T12:18:40+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.theparadigm.ga/bookshelf.html</loc>
-  <lastmod>2018-12-05T12:18:40+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.theparadigm.ga/download/mein-kampf.pdf</loc>
-  <lastmod>2018-12-04T22:09:14+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-
-
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>https://www.theparadigm.ga/</loc>
+    </url>
+    <url>
+        <loc>https://www.theparadigm.ga/bookshelf.html</loc>
+    </url>
+    <url>
+        <loc>https://www.theparadigm.ga/bread.html</loc>
+    </url>
+    <url>
+        <loc>https://www.theparadigm.ga/drawer.html</loc>
+    </url>
+    <url>
+        <loc>https://www.theparadigm.ga/hex.html</loc>
+    </url>
+    <url>
+        <loc>https://www.theparadigm.ga/index.html</loc>
+    </url>
+    <url>
+        <loc>https://www.theparadigm.ga/launch.html</loc>
+    </url>
 </urlset>
