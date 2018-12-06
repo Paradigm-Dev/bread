@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBLcfwhzN8eAbS7fg1wVx6AIWR4Orz6nr0",
-      authDomain: "ecbm-31cf0.firebaseapp.com",
-      databaseURL: "https://ecbm-31cf0.firebaseio.com",
-      projectId: "ecbm-31cf0",
-      storageBucket: "ecbm-31cf0.appspot.com",
-      messagingSenderId: "85157949430"
-    };
-    firebase.initializeApp(config);
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paradigm Launchpad</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
@@ -22,11 +9,28 @@
   <script src="./material/material.min.js"></script>
   <link type="text/css" rel="stylesheet" href="./assets/stylesheet.css"></link>
   <link rel="icon" href="./assets/launchfavicon.ico" type="image/x-icon"/>
-  <script src="/__/firebase/5.5.7/firebase-app.js"></script>
-  <script src="/__/firebase/5.5.7/firebase-auth.js"></script>
+  <script src="/__/firebase/5.5.9/firebase-app.js"></script>
+  <script src="/__/firebase/5.5.9/firebase-auth.js"></script>
+  <script src="/__/firebase/5.5.9/firebase-database.js"></script>
+  <script src="/__/firebase/5.5.9/firebase-storage.js"></script>
+  <script src="/__/firebase/5.5.9/firebase-messaging.js"></script>
   <script src="/__/firebase/init.js"></script>
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="./script/launch.js"></script>
+  <script src="./script/main.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDQsd6rwdTVOF14mbfyhZTgtI2rLx5QOXE",
+      authDomain: "paradigm-a1bc9.firebaseapp.com",
+      databaseURL: "https://paradigm-a1bc9.firebaseio.com",
+      projectId: "paradigm-a1bc9",
+      storageBucket: "paradigm-a1bc9.appspot.com",
+      messagingSenderId: "728943503114"
+    };
+    firebase.initializeApp(config);
+  </script>
+    
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52752236-3"></script>
   <script>
@@ -37,18 +41,18 @@
     gtag('config', 'UA-52752236-3');
   </script>
 </head>
-<body style="background-color: silver;">
+<body>
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
         <span class="mdl-layout-title">Paradigm Launchpad</span>
         <div class="mdl-layout-spacer"></div>
-        <nav class="mdl-navigation">
-          <div id="notifications" class="material-icons mdl-badge mdl-badge--overlap" data-badge="#">notifications</div>
-          <div id="profile" style="margin-left: 24px;" class="material-icons">person</div>
-          <span for="notifications" class="mdl-tooltip">This feature has not been implemented yet!</span>
-          <span for="profile" class="mdl-tooltip">This feature has not been implemented yet!</span>
-        </nav>
+        <div id="user-container">
+          <div hidden id="user-pic"></div>
+          <div hidden id="user-name"></div>
+          <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">Logout</button>
+          <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white"><i class="material-icons">account_circle</i>Login</button>
+        </div>
       </div>
     </header>
     <div class="mdl-layout__drawer">
@@ -66,10 +70,10 @@
       </nav>
     </div>
     <main class="mdl-layout__content">
-        <div style="text-align: center; padding-top: 15vh;">
-            <h2>Launchpad has been temporarily deprecated.</h2>
-            <p>For now, use your Google Account.</p>
-          </div>
+      <div style="text-align: center; padding-top: 15vh;">
+        <h2>Launchpad has been temporarily deprecated.</h2>
+        <p>For now, use your Google Account.</p>
+      </div>
         <div hidden class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
         <div style="text-align: center;" class="mdl-card__supporting-text mdl-color-text--grey-600">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">

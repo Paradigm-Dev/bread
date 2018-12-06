@@ -47,16 +47,12 @@
       <div class="mdl-layout__header-row">
         <span class="mdl-layout-title">Paradigm Bread</span>
         <div class="mdl-layout-spacer"></div>
-        <nav class="mdl-navigation">
-          <div id="notifications" class="material-icons mdl-badge mdl-badge--overlap" data-badge="#">notifications</div>
-          <button id="demo-menu-lower-right" style="margin-left: 24px;" class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">person</i></button>
-          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"for="demo-menu-lower-right">
-            <li href="./../launch.html" class="mdl-menu__item"><a href="./../launch.html">Settings</a></li>
-            <li onclick="firebase.auth().signOut()" class="mdl-menu__item">Logout</li>
-          </ul>
-          <span for="notifications" class="mdl-tooltip">This feature has not been implemented yet!</span>
-          <span for="profile" class="mdl-tooltip">This feature has not been implemented yet!</span>
-        </nav>
+        <div id="user-container">
+          <div hidden id="user-pic"></div>
+          <div hidden id="user-name"></div>
+          <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">Logout</button>
+          <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white"><i class="material-icons">account_circle</i>Login</button>
+        </div>
       </div>
       <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
         <a href="#general" class="mdl-layout__tab is-active">General</a>

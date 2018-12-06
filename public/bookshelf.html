@@ -26,12 +26,12 @@
       <div class="mdl-layout__header-row">
         <span class="mdl-layout-title">Paradigm Bookshelf</span>
         <div class="mdl-layout-spacer"></div>
-        <nav class="mdl-navigation">
-          <div id="notifications" class="material-icons mdl-badge mdl-badge--overlap" data-badge="#">notifications</div>
-          <div id="profile" style="margin-left: 24px;" class="material-icons">person</div>
-          <span for="notifications" class="mdl-tooltip">This feature has not been implemented yet!</span>
-          <span for="profile" class="mdl-tooltip">This feature has not been implemented yet!</span>
-        </nav>
+        <div id="user-container">
+          <div hidden id="user-pic"></div>
+          <div hidden id="user-name"></div>
+          <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">Logout</button>
+          <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white"><i class="material-icons">account_circle</i>Login</button>
+        </div>
       </div>
     </header>
     <div class="mdl-layout__drawer">
