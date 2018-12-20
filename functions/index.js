@@ -4,8 +4,7 @@ const admin = require('firebase-admin');
 admin.initializeApp();
 
 
-
-// Sends a welcome message.
+// Adds a message that welcomes new users into the chat.
 exports.addWelcomeMessages = functions.auth.user().onCreate(async (user) => {
   console.log('A new user signed in for the first time.');
   const fullName = user.displayName || 'Anonymous';
@@ -14,7 +13,7 @@ exports.addWelcomeMessages = functions.auth.user().onCreate(async (user) => {
   // which then displays it in the FriendlyChat clients.
   await admin.database().ref('messages').push({
     name: 'Bot',
-    profilePicUrl: './assets/P.png', // Firebase logo
+    profilePicUrl: './../public/assets/P.png', // Firebase logo
     text: `${fullName} logged on for the first time!`,
   });
   console.log('Welcome message written to database.');
@@ -30,7 +29,7 @@ exports.sendNotifications = functions.database.ref('/messages/{messageId}').onCr
           title: `${snapshot.val().name} posted ${text ? 'a message' : 'an image'}`,
           body: text ? (text.length <= 100 ? text : text.substring(0, 97) + '...') : '',
           icon: snapshot.val().photoUrl || '/images/profile_placeholder.png',
-          click_action: `https://${process.env.GCLOUD_PROJECT}.firebaseapp.com`,
+          click_action: `https://www.theparadigm.ga/bread.html`,
         }
       };
 
@@ -49,19 +48,18 @@ exports.sendNotifications = functions.database.ref('/messages/{messageId}').onCr
 
 // Cleans up the tokens that are no longer valid.
 function cleanupTokens(response, tokens) {
-  // For each notification we check if there was an error.
-  const tokensToRemove = {};
-  response.results.forEach((result, index) => {
-    const error = result.error;
-    if (error) {
-      // Cleanup the tokens who are not registered anymore.
-      if (error.code === 'messaging/invalid-registration-token' ||
-          error.code === 'messaging/registration-token-not-registered') {
-        tokensToRemove[`/fcmTokens/${tokens[index]}`] = null;
-      } else {
-        console.error('Failure sending notification to', tokens[index], error);
-      }
-    }
-  });
-  return admin.database().ref().update(tokensToRemove);
+ // For each notification we check if there was an error.
+ const tokensToRemove = {};
+ response.results.forEach((result, index) => {
+   const error = result.error;
+   if (error) {
+     console.error('Failure sending notification to', tokens[index], error);
+     // Cleanup the tokens who are not registered anymore.
+     if (error.code === 'messaging/invalid-registration-token' ||
+         error.code === 'messaging/registration-token-not-registered') {
+       tokensToRemove[`/fcmTokens/${tokens[index]}`] = null;
+     }
+   }
+ });
+ return admin.database().ref().update(tokensToRemove);
 }
