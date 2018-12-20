@@ -177,11 +177,10 @@ main, #messages-card {
 }
 
 #message-form .mdl-textfield {
-  width: calc(100% - 100px);
+  width: calc(100% - 50px);
 }
 
 #message-form button, #image-form button {
-  width: 100px;
   margin: 15px 0 0 10px;
 }
 
@@ -221,18 +220,6 @@ main, #messages-card {
   padding-left: 20px;
 }
 
-#image-form #submitImage {
-  width: auto;
-  padding: 0 6px 0 1px;
-  min-width: 0;
-}
-
-#image-form #submitImage .material-icons {
-  top: -1px;
-  font-size: 36px;
-  position: relative;
-}
-
 .message img {
   max-width: 300px;
   max-height: 200px;
@@ -256,9 +243,4 @@ main, #messages-card {
     height: 33px;
     background-size: 33px;
   }
-}
-
-.mdl-button .material-icons {
-  top: -1px;
-  margin-right: 5px;
 }

@@ -53,7 +53,7 @@
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title"><img src="./assets/bread.png"> Paradigm Bread</span>
+        <span class="mdl-layout-title"><img style="height: 55px;" src="./assets/breadlogo.png"></span>
         <div class="mdl-layout-spacer"></div>
         <div id="user-container">
           <div hidden id="user-pic"></div>
@@ -91,13 +91,13 @@
               <input autocomplete="off" class="mdl-textfield__input" type="text" id="message">
               <label class="mdl-textfield__label" for="message">Message...</label>
             </div>
-            <button id="submit" disabled type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-              Send
+            <button id="submit" disabled type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+              <i class="material-icons">send</i>
             </button>
           </form>
           <form id="image-form" action="#">
             <input id="mediaCapture" type="file" accept="image/*" capture="camera">
-            <button id="submitImage" title="Add an image" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            <button id="submitImage" type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--accent">
               <i class="material-icons">image</i>
             </button>
           </form>
