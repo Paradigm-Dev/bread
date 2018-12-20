@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans';
   background-color: silver;
 }
   
@@ -42,10 +42,10 @@ body {
 }
 
 footer {
-  position: fixed;
+  position: relative;
   bottom: 0px;
   left: 0px;
-  width: 100vw;
+  width: 100%;
   background-color: #242424;
   color: white;
   vertical-align: middle;
@@ -54,7 +54,7 @@ footer {
   
 .bottomPrgs {
   position: absolute;
-  bottom: 20px;
+  bottom: 0px;
   width: 100vw;
   background-color: gray;
 }
@@ -83,7 +83,7 @@ main, #messages-card {
 }
 
 #messages-card-container {
-  height: calc(100% - 55px);
+  height: calc(100% - 35px);
   padding-bottom: 0;
 }
 
@@ -241,4 +241,8 @@ main, #messages-card {
     height: 33px;
     background-size: 33px;
   }
+}
+
+footer a {
+  color: white;
 }

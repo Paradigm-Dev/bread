@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="./material/material.min.css">
   <script src="./material/material.min.js"></script>
   <meta charset="UTF-8">
-  <title>Paradigm</title>
+  <title>Paradigm Changelog</title>
   <link type="text/css" rel="stylesheet" href="./assets/stylesheet.css"></link>
   <link rel="icon" href="./assets/pfavicon.ico" type="image/x-icon"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52752236-3"></script>
   <script>
@@ -18,13 +18,13 @@
     gtag('js', new Date());
   
     gtag('config', 'UA-52752236-3');
-</script>
+</script> 
 </head>
 <body>
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout--large-screen-only mdl-layout-title"><img style="height: 55px;" src="./assets/paradigmlogo.png"></span>
+        <span class="mdl-layout--large-screen-only mdl-layout-title"><img style="height: 55px;" src="assets/paradigmlogo.png"></span>
         <div class="mdl-layout-spacer"></div>
         <div id="user-container">
           <div hidden id="user-pic"></div>
@@ -35,7 +35,7 @@
       </div>
     </header>
     <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">Apps</span>
+      <span class="mdl-layout-title">Menu</span>
       <nav class="mdl-navigation">
         <a id="homeLink" class="mdl-navigation__link" href="./index.html">Home</a>
         <a id="flameLink" class="mdl-navigation__link" href="./flamechat.html">Flamechat</a>
@@ -50,9 +50,16 @@
       </nav>
     </div>
     <main class="mdl-layout__content">
-      <div style="text-align: center; height: 100%; background: url(./assets/bread_back.jpg)" class="page-content">
-        <h2 style="line-height: 70px; position: relative; text-align: center; margin: auto; padding-top: 30vh; color: white;">A social media platform<br>built for the 21st century</h2>
-        <a style="margin-top: 20px;" href="./flamechat.html" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Open Bread</a>
+      <div id="changelog" style="margin: auto; width: 80vw; padding-top: 10px;" class="page-content">
+        <h1><span class="mdl-badge" data-badge="B">v0.0.1</span></h1>
+        <p>+ Flamechat, a social media platform.</p>
+        <p>/ Hex (The Homework Exchange), is a homework-sharing tool. It is still in development.</p>
+        <p>/ Drawer, a file storage/sharing tool. It is still in development.</p>
+        <p>= Launchpad, our login service. Temporarily deprecated.</p>
+        <p>+ Bookshelf, an e-book/audiobook service.</p>
+        <p>/ Scorecard, a sports tracking tool. It is still in development.</p>
+        <p>+ Terms of Service, Use, and Privacy Policy</p>
+        <p>+ Changelog, what you are reading now.</p>
       </div>
       <footer>© 2018 Paradigm Development. All Rights Reserved.</footer>
     </main>
