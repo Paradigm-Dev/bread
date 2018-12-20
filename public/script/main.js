@@ -123,7 +123,7 @@ function onMediaFileSelected(event) {
   // Check if the file is an image.
   if (!file.type.match('image.*')) {
     var data = {
-      message: 'You can only share images',
+      message: 'You can only send images',
       timeout: 2000
     };
     signInSnackbarElement.MaterialSnackbar.showSnackbar(data);
@@ -219,7 +219,7 @@ function addSizeToGoogleProfilePic(url) {
 }
 
 // A loading image URL.
-var LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif?a';
+var LOADING_IMAGE_URL = './assets/loader.gif';
 
 // Displays a Message in the UI.
 function displayMessage(key, name, text, picUrl, imageUrl) {
