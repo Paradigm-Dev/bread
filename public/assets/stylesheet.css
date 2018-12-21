@@ -1,6 +1,7 @@
 body {
   font-family: 'Open Sans';
   background-color: silver;
+  color: white;
 }
   
 /* Scrollbar */
@@ -60,7 +61,7 @@ footer {
 }
 
 hr {
-  border-color: gray;
+  border-color: rgb(209, 209, 209);
 }
 
 .loader {
@@ -193,7 +194,7 @@ main, #messages-card {
   position: absolute;
   display: flex;
   flex-direction: row;
-  top: 16px;
+  vertical-align: middle;
   width: 100%;
   right: 0;
   padding-left: 10px;
@@ -202,7 +203,7 @@ main, #messages-card {
 }
 
 #user-container #user-pic {
-  top: -3px;
+  top: 1px;
   position: relative;
   display: inline-block;
   background-image: url('/images/profile_placeholder.png');
@@ -215,9 +216,13 @@ main, #messages-card {
 
 #user-container #user-name {
   font-size: 16px;
-  line-height: 36px;
+  line-height: 40px;
   padding-right: 10px;
   padding-left: 20px;
+}
+
+#user-container button {
+  top: 3px;
 }
 
 .message img {
@@ -245,4 +250,28 @@ main, #messages-card {
 
 footer a {
   color: white;
+}
+
+.head .nav .mdl-navigation__link {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.56);
+  font-weight: 500;
+}
+
+.head .nav .mdl-navigation__link:hover {
+  background-color: #00BCD4;
+  color: rgb(255, 255, 255);
+}
+
+.head .nav .material-icons {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.56);
+  margin-right: 32px;
+}
+
+.nav {
+  flex-grow: 1;
+  border: none;
 }

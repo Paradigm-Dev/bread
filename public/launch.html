@@ -41,8 +41,8 @@
     gtag('config', 'UA-52752236-3');
   </script>
 </head>
-<body>
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<body class="mdl-color--blue-grey-900">
+  <div class="head mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
         <span class="mdl-layout--large-screen-only mdl-layout-title"><img style="height: 55px;" src="./assets/launchlogo.png"></span>
@@ -51,13 +51,13 @@
           <div hidden id="user-pic"></div>
           <div hidden id="user-name"></div>
           <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">Logout</button>
-          <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white"><i class="material-icons">account_circle</i>Login</button>
+          <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">Login</button>
         </div>
       </div>
     </header>
-    <div class="mdl-layout__drawer">
+    <div class="mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
       <span class="mdl-layout-title">Apps</span>
-      <nav class="mdl-navigation">
+      <nav class="nav mdl-navigation mdl-color--blue-grey-800">
         <a id="homeLink" class="mdl-navigation__link" href="./index.html">Home</a>
         <a id="flameLink" class="mdl-navigation__link" href="./flamechat.html">Flamechat</a>
         <a id="hexLink" class="mdl-navigation__link" href="./hex.html">Hex</a>
@@ -65,65 +65,16 @@
         <a id="launchLink" class="mdl-navigation__link" href="./launch.html">Launchpad</a>
         <a id="shelfLink" class="mdl-navigation__link" href="./bookshelf.html">Bookshelf</a>
         <a id="scoreLink" class="mdl-navigation__link" href="./scorecard.html">Scorecard</a>
-        <span for="hexLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
-        <span for="drawerLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
-        <span for="launchLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
+        <a id="devLink" class="mdl-navigation__link" href="./devnet.html">DevNet</a>
+        <div class="mdl-layout-spacer"></div>
+        <a id="devLink" class="mdl-navigation__link" href="./devnet.html">DevNet</a>
       </nav>
     </div>
     <main class="mdl-layout__content">
-      <div style="text-align: center; padding-top: 15vh;">
-        <h2>Launchpad has been temporarily deprecated.</h2>
-        <p>For now, use your Google Account.</p>
-      </div>
-        <div hidden class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
-        <div style="text-align: center;" class="mdl-card__supporting-text mdl-color-text--grey-600">
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="email" id="email" name="email">
-            <label class="mdl-textfield__label" for="email">Email</label>
-            <span class="mdl-textfield__error">Please type an email!</span>
-          </div>
-          <br>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="password" id="password" name="password">
-            <label class="mdl-textfield__label" for="password">Password</label>
-          </div>
-          <br>
-          <button disabled class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" id="quickstart-sign-in" name="signin">Sign In</button>
-          &nbsp;&nbsp;&nbsp;
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="quickstart-sign-up" name="signup">Sign Up</button>
-          <div id="account-details">
-            <div class="quickstart-user-details-container">
-              <br>
-              <p>Launchpad status: <span id="quickstart-sign-in-status">Unknown</span></p>
-              <p id="email">Email: unavailable</p>
-              <p id="phone">Phone Number: unavailable</p>
-              <p id="username">Username: unavailable</p>
-              <p id="emailVerified">Email Verified?: unavailable</p>
-              <p id="profilePic">Profile Picture: unavailable</p>
-            </div>
-            <h5>Account Settings</h5>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input class="mdl-textfield__input" type="text" id="username" name="username">
-              <label class="mdl-textfield__label" for="username">Username</label>
-            </div>
-            <br>
-            <button onclick="editAccount()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">Update Account</button>
-            <h5>Advanced Account Settings</h5>
-            <button onclick="deleteUser()" style="background-color: #F44336;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Delete Account</button>
-            &nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" disabled id="quickstart-verify-email" name="verify-email">Verify Email</button>
-            &nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="quickstart-password-reset" name="verify-email">Reset Password</button>
-          </div>
-        </div>
-      </div>
-      <div id="p" class="bottomPrgs mdl-progress mdl-js-progress"></div>
-      <script>
-        document.querySelector('#p').addEventListener('mdl-componentupgraded', function() {
-          this.MaterialProgress.setProgress(33);
-          this.MaterialProgress.setBuffer(50);
-        });
-      </script>
+      <div style="text-align: center; padding-top: 15vh; width: 75%; margin: auto;">
+        <span class="mdl-color-text--blue-900" style="font-size: 125px; ">:/</span>
+        <hr style="margin: 50px;">
+        <h2>Launchpad is Not Ready Yet</h2>
     </main>
     <footer>© 2018 Paradigm Development. All Rights Reserved.&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="./tos.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="./changelog.html">Changelog</a></footer>
   </div>

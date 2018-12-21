@@ -13,7 +13,7 @@ exports.addWelcomeMessages = functions.auth.user().onCreate(async (user) => {
   // which then displays it in the FriendlyChat clients.
   await admin.database().ref('messages').push({
     name: 'Bot',
-    profilePicUrl: './../public/assets/P.png', // Firebase logo
+    profilePicUrl: './assets/P.png', // Firebase logo
     text: `${fullName} logged on for the first time!`,
   });
   console.log('Welcome message written to database.');
@@ -28,7 +28,7 @@ exports.sendNotifications = functions.database.ref('/messages/{messageId}').onCr
         notification: {
           title: `${snapshot.val().name} posted ${text ? 'a message' : 'an image'}`,
           body: text ? (text.length <= 100 ? text : text.substring(0, 97) + '...') : '',
-          icon: snapshot.val().photoUrl || '/images/profile_placeholder.png',
+          icon: snapshot.val().photoUrl || './assets/profile_placeholder.png',
           click_action: `https://www.theparadigm.ga/bread.html`,
         }
       };

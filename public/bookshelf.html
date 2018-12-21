@@ -20,23 +20,23 @@
     gtag('config', 'UA-52752236-3');
   </script>
 </head>
-<body>
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<body class="mdl-color--blue-grey-900">
+  <div class="head mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout--large-screen-only mdl-layout-title"><img style="height: 55px;" src="assets/booklogo.png"></span>
+        <span class="mdl-layout--large-screen-only mdl-layout-title"><img style="height: 55px;" src="./assets/booklogo.png"></span>
         <div class="mdl-layout-spacer"></div>
         <div id="user-container">
           <div hidden id="user-pic"></div>
           <div hidden id="user-name"></div>
           <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">Logout</button>
-          <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white"><i class="material-icons">account_circle</i>Login</button>
+          <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">Login</button>
         </div>
       </div>
     </header>
-    <div class="mdl-layout__drawer">
+    <div class="mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
       <span class="mdl-layout-title">Apps</span>
-      <nav class="mdl-navigation">
+      <nav class="nav mdl-navigation mdl-color--blue-grey-800">
         <a id="homeLink" class="mdl-navigation__link" href="./index.html">Home</a>
         <a id="flameLink" class="mdl-navigation__link" href="./flamechat.html">Flamechat</a>
         <a id="hexLink" class="mdl-navigation__link" href="./hex.html">Hex</a>
@@ -44,9 +44,9 @@
         <a id="launchLink" class="mdl-navigation__link" href="./launch.html">Launchpad</a>
         <a id="shelfLink" class="mdl-navigation__link" href="./bookshelf.html">Bookshelf</a>
         <a id="scoreLink" class="mdl-navigation__link" href="./scorecard.html">Scorecard</a>
-        <span for="hexLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
-        <span for="drawerLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
-        <span for="launchLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
+        <a id="devLink" class="mdl-navigation__link" href="./devnet.html">DevNet</a>
+        <div class="mdl-layout-spacer"></div>
+        <a id="devLink" class="mdl-navigation__link" href="./devnet.html">DevNet</a>
       </nav>
     </div>
     <main class="mdl-layout__content">
@@ -93,8 +93,8 @@
           <a href="./download/manifesto.pdf" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Download</a>
         </div>
       </div>
-      <footer>© 2018 Paradigm Development. All Rights Reserved.&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="./tos.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="./changelog.html">Changelog</a></footer>
     </main>
+    <footer>© 2018 Paradigm Development. All Rights Reserved.&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="./tos.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="./changelog.html">Changelog</a></footer>
   </div>
 </body>
 </html>
