@@ -1,0 +1,9 @@
+{
+    "name": "Paradigm Drawer",
+    "short_name": "Drawer",
+    "start_url": "/drawer.html",
+    "display": "standalone",
+    "orientation": "portrait",
+    "gcm_sender_id": "103953800507"
+  }
+  
