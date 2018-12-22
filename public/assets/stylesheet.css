@@ -275,3 +275,8 @@ a  {
   flex-grow: 1;
   border: none;
 }
+
+.drawerLogo {
+  width: 150px;
+  margin: 10px;
+}
