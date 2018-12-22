@@ -39,7 +39,7 @@ function loadMessages() {
   // Loads the last 12 messages and listen for new ones.
   var callback = function(snap) {
     var data = snap.val();
-    displayMessage(snap.key, data.name, data.text, data.profilePicUrl, data.imageUrl);
+    displayMessage(snap.key, data.name, data.text, data.profilePicUrl, data.imageUrl, data.date, data.time);
   };
 
   firebase.database().ref('/messages/').on('child_added', callback);
@@ -49,10 +49,13 @@ function loadMessages() {
 // Saves a new message on the Firebase DB.
 function saveMessage(messageText) {
   // Add a new message entry to the Firebase database.
+  var date = new Date(Date.now())
   return firebase.database().ref('/messages/').push({
     name: getUserName(),
     text: messageText,
-    profilePicUrl: getProfilePicUrl()
+    profilePicUrl: getProfilePicUrl(),
+    date: date.toLocaleDateString(),
+    time: date.toLocaleTimeString()
   }).catch(function(error) {
     console.error('Error writing new message to Firebase Database', error);
   });
@@ -62,10 +65,13 @@ function saveMessage(messageText) {
 // This first saves the image in Firebase storage.
 function saveImageMessage(file) {
   // 1 - We add a message with a loading icon that will get updated with the shared image.
+  var date = new Date(Date.now())
   firebase.database().ref('/messages/').push({
     name: getUserName(),
     imageUrl: LOADING_IMAGE_URL,
-    profilePicUrl: getProfilePicUrl()
+    profilePicUrl: getProfilePicUrl(),
+    date: date.toLocaleDateString(),
+    time: date.toLocaleTimeString()
   }).then(function(messageRef) {
     // 2 - Upload the image to Cloud Storage.
     var filePath = firebase.auth().currentUser.uid + '/' + messageRef.key + '/' + file.name;
@@ -207,7 +213,7 @@ var MESSAGE_TEMPLATE =
     '<div class="message-container">' +
       '<div class="spacing"><div class="pic"></div></div>' +
       '<div class="message"></div>' +
-      '<div class="name"></div>' +
+      '<div class="nameDateTime"></div>'
     '</div>';
 
 // Adds a size to Google Profile pics URLs.
@@ -222,7 +228,7 @@ function addSizeToGoogleProfilePic(url) {
 var LOADING_IMAGE_URL = './assets/loader.gif';
 
 // Displays a Message in the UI.
-function displayMessage(key, name, text, picUrl, imageUrl) {
+function displayMessage(key, name, text, picUrl, imageUrl, date, time) {
   var div = document.getElementById(key);
   // If an element for that message does not exists yet we create it.
   if (!div) {
@@ -235,7 +241,7 @@ function displayMessage(key, name, text, picUrl, imageUrl) {
   if (picUrl) {
     div.querySelector('.pic').style.backgroundImage = 'url(' + addSizeToGoogleProfilePic(picUrl) + ')';
   }
-  div.querySelector('.name').textContent = name;
+  div.querySelector('.nameDateTime').textContent = name + " sent this on " + date + " at " + time;
   var messageElement = div.querySelector('.message');
   if (text) { // If the message is text.
     messageElement.textContent = text;
