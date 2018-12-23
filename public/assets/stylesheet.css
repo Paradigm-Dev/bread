@@ -194,7 +194,6 @@ main, #messages-card {
   position: absolute;
   display: flex;
   flex-direction: row;
-  vertical-align: middle;
   width: 100%;
   right: 0;
   padding-left: 10px;
@@ -203,7 +202,6 @@ main, #messages-card {
 }
 
 #user-container #user-pic {
-  top: 1px;
   position: relative;
   display: inline-block;
   background-image: url('/assets/profile_placeholder.png');
@@ -222,7 +220,7 @@ main, #messages-card {
 }
 
 #user-container button {
-  top: 3px;
+  top: 2px;
 }
 
 .message img {
