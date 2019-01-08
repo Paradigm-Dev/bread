@@ -2,7 +2,7 @@
   <div id="app" class="head mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title"><img style="height: 55px;" src="./assets/paradigmlogo.png">{{ app }}</span>
+        <span class="mdl-layout-title"><img style="height: 55px;" src="./assets/paradigmlogo.png"></span>
         <div class="mdl-layout-spacer"></div>
         <div id="user-container">
           <div hidden id="user-pic"></div>
@@ -44,8 +44,11 @@ export default {
 </script>
 
 <style lang="scss">
-body {
+* {
   font-family: 'Open Sans';
+}
+
+body {
   color: white;
 }
 

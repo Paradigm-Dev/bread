@@ -16,6 +16,11 @@ firebase.initializeApp({
 })
 
 new Vue({
+  data: {
+    return: {
+      app: ''
+    }
+  },
   router,
   render: h => h(App)
 }).$mount('#app')

@@ -1,0 +1,116 @@
+[debug] [2018-12-28T14:30:12.297Z] ----------------------------------------------------------------------
+[debug] [2018-12-28T14:30:12.301Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\aidan\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2018-12-28T14:30:12.301Z] CLI Version:   6.2.2
+[debug] [2018-12-28T14:30:12.301Z] Platform:      win32
+[debug] [2018-12-28T14:30:12.301Z] Node Version:  v11.2.0
+[debug] [2018-12-28T14:30:12.302Z] Time:          Fri Dec 28 2018 09:30:12 GMT-0500 (Eastern Standard Time)
+[debug] [2018-12-28T14:30:12.302Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-12-28T14:30:12.331Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-12-28T14:30:12.332Z] > authorizing via signed-in user
+[debug] [2018-12-28T14:30:12.332Z] [iam] checking project paradigm-a1bc9 for permissions ["firebase.projects.get"]
+[debug] [2018-12-28T14:30:12.336Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/paradigm-a1bc9:testIamPermissions  
+
+[debug] [2018-12-28T14:30:12.542Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-28T14:30:12.544Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/paradigm-a1bc9  
+ 
+[debug] [2018-12-28T14:30:12.653Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\aidan\Dev\paradigm-vue'...
+[info] 
+[warn] !  functions: Cannot start emulator. Error: Cannot find module 'cacheable-request'
+[debug] [2018-12-28T14:30:12.820Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/728943503114/clients/_:getWebAppConfig  
+ 
+[debug] [2018-12-28T14:30:13.170Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-01-07T18:51:12.967Z] ----------------------------------------------------------------------
+[debug] [2019-01-07T18:51:12.969Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\aidan\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-01-07T18:51:12.970Z] CLI Version:   6.2.2
+[debug] [2019-01-07T18:51:12.970Z] Platform:      win32
+[debug] [2019-01-07T18:51:12.970Z] Node Version:  v11.2.0
+[debug] [2019-01-07T18:51:12.970Z] Time:          Mon Jan 07 2019 13:51:12 GMT-0500 (Eastern Standard Time)
+[debug] [2019-01-07T18:51:12.970Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-01-07T18:51:12.997Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-01-07T18:51:12.998Z] > authorizing via signed-in user
+[debug] [2019-01-07T18:51:12.998Z] [iam] checking project paradigm-a1bc9 for permissions ["firebase.projects.get"]
+[debug] [2019-01-07T18:51:13.000Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-01-07T18:51:13.004Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-01-07T18:51:13.170Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-07T18:51:13.185Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/paradigm-a1bc9:testIamPermissions  
+
+[debug] [2019-01-07T18:51:13.338Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-07T18:51:13.341Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/paradigm-a1bc9  
+ 
+[debug] [2019-01-07T18:51:13.648Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'c:\Users\aidan\Dev\paradigm-vue'...
+[info] 
+[warn] !  functions: Cannot start emulator. Error: Cannot find module 'cacheable-request'
+[debug] [2019-01-07T18:51:13.797Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/728943503114/clients/_:getWebAppConfig  
+ 
+[debug] [2019-01-07T18:51:14.343Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-01-08T13:40:47.282Z] ----------------------------------------------------------------------
+[debug] [2019-01-08T13:40:47.286Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\aidan\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-01-08T13:40:47.286Z] CLI Version:   6.2.2
+[debug] [2019-01-08T13:40:47.286Z] Platform:      win32
+[debug] [2019-01-08T13:40:47.286Z] Node Version:  v11.2.0
+[debug] [2019-01-08T13:40:47.287Z] Time:          Tue Jan 08 2019 08:40:47 GMT-0500 (Eastern Standard Time)
+[debug] [2019-01-08T13:40:47.287Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-01-08T13:40:47.300Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-01-08T13:40:47.300Z] > authorizing via signed-in user
+[debug] [2019-01-08T13:40:47.301Z] [iam] checking project paradigm-a1bc9 for permissions ["firebase.projects.get"]
+[debug] [2019-01-08T13:40:47.303Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-01-08T13:40:47.303Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-01-08T13:40:47.475Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-08T13:40:47.494Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/paradigm-a1bc9:testIamPermissions  
+
+[debug] [2019-01-08T13:40:47.851Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-08T13:40:47.852Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/paradigm-a1bc9  
+ 
+[debug] [2019-01-08T13:40:48.073Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\aidan\Dev\paradigm-vue'...
+[info] 
+[warn] !  functions: Cannot start emulator. Error: Cannot find module 'cacheable-request'
+[debug] [2019-01-08T13:40:48.254Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/728943503114/clients/_:getWebAppConfig  
+ 
+[debug] [2019-01-08T13:40:48.595Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-01-08T17:34:15.344Z] ----------------------------------------------------------------------
+[debug] [2019-01-08T17:34:15.347Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\aidan\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-01-08T17:34:15.347Z] CLI Version:   6.2.2
+[debug] [2019-01-08T17:34:15.347Z] Platform:      win32
+[debug] [2019-01-08T17:34:15.347Z] Node Version:  v11.2.0
+[debug] [2019-01-08T17:34:15.348Z] Time:          Tue Jan 08 2019 12:34:15 GMT-0500 (Eastern Standard Time)
+[debug] [2019-01-08T17:34:15.348Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-01-08T17:34:15.364Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-01-08T17:34:15.366Z] > authorizing via signed-in user
+[debug] [2019-01-08T17:34:15.366Z] [iam] checking project paradigm-a1bc9 for permissions ["firebase.projects.get"]
+[debug] [2019-01-08T17:34:15.368Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-01-08T17:34:15.369Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-01-08T17:34:15.595Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-08T17:34:15.608Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/paradigm-a1bc9:testIamPermissions  
+
+[debug] [2019-01-08T17:34:15.885Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-08T17:34:15.887Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/paradigm-a1bc9  
+ 
+[debug] [2019-01-08T17:34:16.118Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\aidan\Dev\paradigm-vue'...
+[info] 
+[warn] !  functions: Cannot start emulator. Error: Cannot find module 'cacheable-request'
+[debug] [2019-01-08T17:34:16.275Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/728943503114/clients/_:getWebAppConfig  
+ 
+[debug] [2019-01-08T17:34:16.659Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist
+[info] +  hosting: Local server: http://localhost:5000
