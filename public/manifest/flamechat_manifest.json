@@ -1,9 +1,0 @@
-{
-    "name": "Paradigm Flamechat",
-    "short_name": "Flamechat",
-    "start_url": "/flamechat.html",
-    "display": "standalone",
-    "orientation": "portrait",
-    "gcm_sender_id": "103953800507"
-  }
-  

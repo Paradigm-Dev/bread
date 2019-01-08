@@ -6,14 +6,14 @@ admin.initializeApp();
 
 // Adds a message that welcomes new users into the chat.
 exports.addWelcomeMessages = functions.auth.user().onCreate(async (user) => {
-  console.log('A new user signed in for the first time.');
   const fullName = user.displayName || 'Anonymous';
+  console.log(fullName + 'A new user signed in for the first time.');
   var date = new Date(Date.now())
   // Saves the new welcome message into the database
   // which then displays it in the FriendlyChat clients.
   await admin.database().ref('messages').push({
     name: 'Bot',
-    profilePicUrl: './assets/P.png', // Firebase logo
+    profilePicUrl: './../src/assets/P.png', // Firebase logo
     text: `${fullName} logged on for the first time!`,
     date: date.toLocaleDateString(),
     time: date.toLocaleTimeString()
@@ -30,8 +30,8 @@ exports.sendNotifications = functions.database.ref('/messages/{messageId}').onCr
         notification: {
           title: `${snapshot.val().name} posted ${text ? 'a message' : 'an image'}`,
           body: text ? (text.length <= 100 ? text : text.substring(0, 97) + '...') : '',
-          icon: snapshot.val().photoUrl || './assets/profile_placeholder.png',
-          click_action: `https://www.theparadigm.ga/bread.html`,
+          icon: snapshot.val().photoUrl || './../src/assets/profile_placeholder.jpg',
+          click_action: `https://www.theparadigm.ga/flamechat`,
         }
       };
 

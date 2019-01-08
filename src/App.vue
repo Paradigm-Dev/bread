@@ -1,0 +1,325 @@
+<template>
+  <div id="app" class="head mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title"><img style="height: 55px;" src="./assets/paradigmlogo.png">{{ app }}</span>
+        <div class="mdl-layout-spacer"></div>
+        <div id="user-container">
+          <div hidden id="user-pic"></div>
+          <div hidden id="user-name"></div>
+          <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">Logout</button>
+          <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">Login</button>
+        </div>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+      <span class="mdl-layout-title">Apps</span>
+      <nav class="nav mdl-navigation mdl-color--blue-grey-800">
+        <router-link to="/home" id="homeLink" class="mdl-navigation__link">Home</router-link>
+        <router-link to="/flamechat" replace id="flameLink" class="mdl-navigation__link">Flamechat</router-link>
+        <router-link to="/hex" id="hexLink" class="mdl-navigation__link">Hex</router-link>
+        <router-link to="/drawer" id="drawerLink" class="mdl-navigation__link">Drawer</router-link>
+        <router-link to="/launchpad" id="launchLink" class="mdl-navigation__link">Launchpad</router-link>
+        <router-link to="/bookshelf" id="shelfLink" class="mdl-navigation__link">Bookshelf</router-link>
+        <router-link to="/scorecard" id="scoreLink" class="mdl-navigation__link">Scorecard</router-link>
+        <router-link to="/devnet" id="devLink" class="mdl-navigation__link">DevNet</router-link>
+        <div class="mdl-layout-spacer"></div>
+        <router-link to="/support" id="supportLink" class="mdl-navigation__link">Support</router-link>
+        <img class="drawerLogo" src="./assets/paradigmlogo.png">
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <transition name="slide">
+        <router-view></router-view>
+      </transition>
+    </main>
+    <footer>© 2018 Paradigm Development. All Rights Reserved.&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<router-link to="/terms">Privacy Policy</router-link>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<router-link to="/changelog">Changelog</router-link>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<router-link to="/notice">Notice</router-link></footer>
+  </div>
+</template>
+
+<script>
+export default {
+  
+}
+</script>
+
+<style lang="scss">
+body {
+  font-family: 'Open Sans';
+  color: white;
+}
+
+/* Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(241, 241, 241, 0.25);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.chatroom {
+  overflow-x: hidden;
+  width: 98vw;
+  height: 75vh;
+  position: absolute;
+  left: 25px;
+  top: 25px;
+}
+
+.drawer-label {
+  text-align: center;
+  font-size: 17px;
+}
+
+footer {
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: #242424;
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.bottomPrgs {
+  position: absolute;
+  bottom: 0px;
+  width: 100vw;
+  background-color: gray;
+}
+
+hr {
+  border-color: rgb(209, 209, 209);
+}
+
+.loader {
+  position: relative;
+  margin-top: 20vh;
+  text-align: center;
+}
+
+#loader {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+main, #messages-card {
+  height: 100%;
+  padding-bottom: 0;
+}
+
+#messages-card-container {
+  height: calc(100% - 35px);
+  padding-bottom: 0;
+}
+
+#messages-card {
+  margin-top: 15px;
+}
+
+.mdl-grid {
+  max-width: 1024px;
+  margin: auto;
+}
+
+.mdl-card__supporting-text {
+  width: auto;
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#messages {
+  overflow-y: auto;
+  margin-bottom: 10px;
+  height: calc(100% - 80px);
+  display: flex;
+  flex-direction: column;
+}
+
+#message-filler {
+  flex-grow: 1;
+}
+
+.message-container:first-of-type {
+  border-top-width: 0;
+}
+
+.message-container {
+  display: block;
+  margin-top: 10px;
+  border-top: 1px solid #f3f3f3;
+  padding-top: 10px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.message-container.visible {
+  opacity: 1;
+}
+
+.message-container .pic {
+  background-image: url('/assets/profile_placeholder.png');
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  background-size: 30px;
+  border-radius: 20px;
+}
+
+.message-container .spacing {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.message-container .message {
+  display: table-cell;
+  width: calc(100% - 40px);
+  padding: 5px 0 5px 10px;
+}
+
+.message-container .nameDateTime {
+  display: inline-block;
+  width: 100%;
+  padding-left: 40px;
+  color: #bbb;
+  font-style: italic;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+#message-form {
+  display: flex;
+  flex-direction: row;
+  width: calc(100% - 48px);
+  float: left;
+}
+
+#image-form {
+  display: flex;
+  flex-direction: row;
+  width: 48px;
+  float: right;
+}
+
+#message-form .mdl-textfield {
+  width: calc(100% - 50px);
+}
+
+#message-form button, #image-form button {
+  margin: 15px 0 0 10px;
+}
+
+.mdl-card {
+  background: linear-gradient(white, #f9f9f9);
+  justify-content: space-between;
+}
+
+#user-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  right: 0;
+  padding-left: 10px;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+#user-container #user-pic {
+  position: relative;
+  display: inline-block;
+  background-image: url('/assets/profile_placeholder.png');
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  background-size: 40px;
+  border-radius: 20px;
+}
+
+#user-container #user-name {
+  font-size: 16px;
+  line-height: 40px;
+  padding-right: 10px;
+  padding-left: 20px;
+}
+
+#user-container button {
+  top: 2px;
+}
+
+.message img {
+  max-width: 300px;
+  max-height: 200px;
+}
+
+#mediaCapture {
+  display: none;
+}
+
+@media screen and (max-width: 610px) {
+  #user-container {
+    height: 38px;
+    padding-top: 3px;
+    padding-right: 2px;
+  }
+  #user-container #user-pic {
+    top: 2px;
+    width: 33px;
+    height: 33px;
+    background-size: 33px;
+  }
+}
+
+a  {
+  color: white;
+}
+
+.head .nav .mdl-navigation__link {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.56);
+  font-weight: 500;
+  transition: background-color .25s;
+  -webkit-transition: background-color .25;
+}
+
+.head .nav .mdl-navigation__link:hover {
+  background-color: #607D8B;
+}
+
+.head .nav .material-icons {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.56);
+  margin-right: 32px;
+}
+
+.nav {
+  flex-grow: 1;
+  border: none;
+}
+
+.drawerLogo {
+  width: 150px;
+  margin: 10px;
+}
+</style>

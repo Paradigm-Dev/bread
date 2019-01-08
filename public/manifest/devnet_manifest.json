@@ -1,9 +1,0 @@
-{
-    "name": "Paradigm DevNet",
-    "short_name": "DevNet",
-    "start_url": "/devnet.html",
-    "display": "standalone",
-    "orientation": "portrait",
-    "gcm_sender_id": "103953800507"
-  }
-  

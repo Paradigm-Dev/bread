@@ -1,9 +1,0 @@
-{
-    "name": "Paradigm Homework Exchange",
-    "short_name": "Hex",
-    "start_url": "/hex.html",
-    "display": "standalone",
-    "orientation": "portrait",
-    "gcm_sender_id": "103953800507"
-  }
-  

@@ -1,9 +1,0 @@
-{
-    "name": "Paradigm Scorecard",
-    "short_name": "Scorecard",
-    "start_url": "/scorecard.html",
-    "display": "standalone",
-    "orientation": "portrait",
-    "gcm_sender_id": "103953800507"
-  }
-  
