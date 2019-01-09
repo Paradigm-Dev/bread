@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDQsd6rwdTVOF14mbfyhZTgtI2rLx5QOXE",
+      authDomain: "paradigm-a1bc9.firebaseapp.com",
+      databaseURL: "https://paradigm-a1bc9.firebaseio.com",
+      projectId: "paradigm-a1bc9",
+      storageBucket: "paradigm-a1bc9.appspot.com",
+      messagingSenderId: "728943503114"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="/__/firebase/5.5.9/firebase-app.js"></script>
+  <script src="/__/firebase/5.5.9/firebase-auth.js"></script>
+  <script src="/__/firebase/5.5.9/firebase-database.js"></script>
+  <script src="/__/firebase/5.5.9/firebase-storage.js"></script>
+  <script src="/__/firebase/5.5.9/firebase-messaging.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="./script/main.js" defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="The social media platform built for the 21st century.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52752236-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-52752236-3');
+  </script>
+  <title>Paradigm Flamechat</title>
+  <meta name="msapplication-tap-highlight" content="no">
+  <link rel="manifest" href="./manifest/flamechat_manifest.json">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="./material/material.min.rorange.css">
+  <script src="./material/material.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/stylesheet.css">
+  <link rel="icon" href="./assets/flamechatfavicon.ico" type="image/x-icon"/>
+</head>
+<body class="mdl-color--blue-grey-900">
+  <div class="head mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout--large-screen-only mdl-layout-title"><img style="height: 55px;" src="./assets/flamechatlogo.png"></span>
+        <span class="mdl-layout--small-screen-only mdl-layout-title"><img style="height: 55px;" src="./assets/flamechat.png"></span>
+        <div class="mdl-layout-spacer"></div>
+        <div id="user-container">
+          <div hidden id="user-pic"></div>
+          <div hidden id="user-name"></div>
+          <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">Logout</button>
+          <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">Login</button>
+        </div>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+      <span class="mdl-layout-title">Apps</span>
+      <nav class="nav mdl-navigation mdl-color--blue-grey-800">
+        <a id="homeLink" class="mdl-navigation__link" href="./index.html">Home</a>
+        <a id="flameLink" class="mdl-navigation__link" href="./flamechat.html">Flamechat</a>
+        <a id="hexLink" class="mdl-navigation__link" href="./hex.html">Hex</a>
+        <a id="drawerLink" class="mdl-navigation__link" href="./drawer.html">Drawer</a>
+        <a id="launchLink" class="mdl-navigation__link" href="./launch.html">Launchpad</a>
+        <a id="shelfLink" class="mdl-navigation__link" href="./bookshelf.html">Bookshelf</a>
+        <a id="scoreLink" class="mdl-navigation__link" href="./scorecard.html">Scorecard</a>
+        <a id="devLink" class="mdl-navigation__link" href="./devnet.html">DevNet</a>
+        <div class="mdl-layout-spacer"></div>
+        <a id="supportLink" class="mdl-navigation__link" href="./support.html">Support</a>
+        <img class="drawerLogo" src="./assets/paradigmlogo.png">
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div id="messages-card-container" class="mdl-cell mdl-cell--12-col mdl-grid">
+        <div id="messages-card" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
+          <div style="width: auto; height: 100%; padding-top: 0; padding-bottom: 0;" class="mdl-card__supporting-text mdl-color-text--grey-600">
+            <div id="messages">
+              <span id="message-filler"></span>
+            </div>
+            <form id="message-form" action="#">
+              <div id="mesage-form-div" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input autocomplete="off" class="mdl-textfield__input" type="text" id="message">
+                <label class="mdl-textfield__label" for="message">Message...</label>
+              </div>
+              <button id="submit" disabled type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">
+                <i class="material-icons">send</i>
+              </button>
+            </form>
+            <form id="image-form" action="#">
+              <input id="mediaCapture" type="file" accept="image/*" capture="camera">
+              <button id="submitImage" type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">
+                <i class="material-icons">image</i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop" style="height: 100%; padding-bottom: 0; margin-top: 15px;">
+          <div style="width: auto; height: 100%; padding-top: 0; padding-bottom: 0;" class="mdl-card__supporting-text mdl-color-text--grey-600" style="margin-top: 15px; padding-top: 10px;">
+            <div style="text-align: center; padding-top: 20vh; width: 100%; margin: auto;">
+              <span class="mdl-color-text--blue-900" style="font-size: 125px; ">:/</span>
+              <hr style="margin: 50px;">
+              <h2 style="color: black;">Direct Messages are Not Ready Yet</h2>
+            </div>
+          </div>
+        </div>
+        <div id="must-signin-snackbar" class="mdl-js-snackbar mdl-snackbar">
+          <div class="mdl-snackbar__text"></div>
+          <button class="mdl-snackbar__action" type="button"></button>
+        </div>
+      </div>
+    </main>
+    <footer class="mdl-color--deep-orange-500">© 2018 Paradigm Development. All Rights Reserved.&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="./tos.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="./changelog.html">Changelog</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="./notice.html">Notice</a></footer>
+  </div>
+</body>
+</html>

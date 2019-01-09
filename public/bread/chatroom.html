@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chatApp">
+<head>
+  <!--Scripts-->
+  <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+  <script>
+    var config = {
+      apiKey: "AIzaSyBLcfwhzN8eAbS7fg1wVx6AIWR4Orz6nr0",
+      authDomain: "ecbm-31cf0.firebaseapp.com",
+      databaseURL: "https://ecbm-31cf0.firebaseio.com",
+      projectId: "ecbm-31cf0",
+      storageBucket: "",
+      messagingSenderId: "85157949430"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+  <script src="./../script/chat.js"></script>
+  <script src="./../script/loader.js"></script>
+  <script src="./../script/launch.js"></script>
+  <!--Styles-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="./../material/material.min.css">
+  <script src="./../material/material.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="./../assets/stylesheet.css"></link>
+  <link rel="icon" href="./../assets/breadfavicon.ico" type="image/x-icon"/>
+  <!--Other-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paradigm Bread</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52752236-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-52752236-3');
+  </script>
+</head>
+<body onload="pageLoader()" ng-controller="ChatController">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--tabs">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Paradigm Bread</span>
+        <div class="mdl-layout-spacer"></div>
+        <div id="user-container">
+          <div hidden id="user-pic"></div>
+          <div hidden id="user-name"></div>
+          <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">Logout</button>
+          <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white"><i class="material-icons">account_circle</i>Login</button>
+        </div>
+      </div>
+      <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+        <a href="#general" class="mdl-layout__tab is-active">General</a>
+        <a href="#tab-2" class="mdl-layout__tab">Another Board</a>
+        <a style="border-left: 1px solid darkslategrey;" href="#tab-3" class="mdl-layout__tab">Seperate Board</a>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Apps</span>
+      <nav class="mdl-navigation">
+        <a id="breadLink" class="mdl-navigation__link" href="./../index.html">Home</a>
+        <a id="breadLink" class="mdl-navigation__link" href="./../bread.html">Bread</a>
+        <a id="hexLink" class="mdl-navigation__link" href="./../hex.html">Hex</a>
+        <a id="drawerLink" class="mdl-navigation__link" href="./../drawer.html">Drawer</a>
+        <a id="launchLink" class="mdl-navigation__link" href="./../launch.html">Launchpad</a>
+        <a id="shelfLink" class="mdl-navigation__link" href="./../bookshelf.html">Bookshelf</a>
+        <span for="hexLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
+        <span for="drawerLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
+        <span for="launchLink" class="mdl-tooltip">This feature has not been implemented yet!</span>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <section class="mdl-layout__tab-panel is-active" id="general">
+        <div class="loader">
+          <div id="loader" class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+        </div>
+        <div id="divLoad" style="display:none;" class="chatroom">
+          <div ng-repeat="m in messages">
+            <div style="padding-left: 6px;">
+              <h4>{{m.username}}<span style="color: #3e3e3e; font-style: italic; padding-left: 5px;" class="mdl-typography--body-1">{{m.date | date:'medium'}}</span></h4>
+              <span style="line-height: normal;" class="mdl-typography--body-1" style="padding-top: 10px;">{{m.message}}</span>
+              <span style="padding-top: 10px;">{{m.image}}</span>
+            </div>
+            <hr>
+          </div>
+        </div>
+        <form autocomplete="off" class="form-group" style="white-space: nowrap; position: absolute; bottom: 25px; left: 25px;">
+          <button id="uploadBtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-button--mini-fab mdl-button--colored" style="background-color: #3F51B5;"><i class="material-icons">add</i></button>
+          <div style="position: relative; left: 10px; width: 25vw;" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="username" class="form-control" ng-model="usernameText">
+            <label class="mdl-textfield__label" for="username">Username</label>
+          </div>
+          <div style="position: relative; left: 10px; width: 60vw;" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="message" class="form-control" ng-model="messageText">
+            <label class="mdl-textfield__label" for="username">Message</label>
+          </div>
+          <button id="sendBtn" style="position: relative; left: 10px;" type="submit" ng-click="send()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Send</button>
+          <script>
+            document.getElementById("message")
+            .addEventListener("keyup", function(event) {
+              event.preventDefault();
+              if (event.keyCode === 13) {
+                document.getElementById("sendBtn").click();
+              }
+            });
+          </script>
+        </form>
+        <div id="p2" class="bottomPrgs mdl-progress mdl-js-progress mdl-progress--indeterminate"></div>
+        <footer>© 2018 Paradigm Development. All Rights Reserved.</footer>
+      </section>
+      <section class="mdl-layout__tab-panel" id="tab-2">
+        <div style="text-align: center; padding-top: 15vh;">
+          <h2>Multiple Boards has not been implemented yet!</h2>
+          <p>But it is planned for the future!</p>
+        </div>
+        <div id="p3" class="bottomPrgs mdl-progress mdl-js-progress"></div>
+        <script>
+          document.querySelector('#p3').addEventListener('mdl-componentupgraded', function() {
+            this.MaterialProgress.setProgress(33);
+            this.MaterialProgress.setBuffer(50);
+          });
+        </script>
+        <footer>© 2018 Paradigm Development. All Rights Reserved.</footer>
+      </section>
+      <section class="mdl-layout__tab-panel" id="tab-3">
+        <div style="text-align: center; padding-top: 15vh;">
+          <h2>Multiple Boards has not been implemented yet!</h2>
+          <p>But it is planned for the future!</p>
+        </div>
+        <footer>© 2018 Paradigm Development. All Rights Reserved.</footer>
+        <div id="p4" class="bottomPrgs mdl-progress mdl-js-progress"></div>
+        <script>
+          document.querySelector('#p4').addEventListener('mdl-componentupgraded', function() {
+            this.MaterialProgress.setProgress(33);
+            this.MaterialProgress.setBuffer(50);
+          });
+        </script>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

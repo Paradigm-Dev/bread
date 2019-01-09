@@ -1,0 +1,9 @@
+{
+    "name": "Paradigm Bookshelf",
+    "short_name": "Bookshelf",
+    "start_url": "/bookshelf.html",
+    "display": "standalone",
+    "orientation": "portrait",
+    "gcm_sender_id": "103953800507"
+  }
+  
