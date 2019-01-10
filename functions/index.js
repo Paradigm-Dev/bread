@@ -30,8 +30,8 @@ exports.sendNotifications = functions.database.ref('/messages/{messageId}').onCr
         notification: {
           title: `${snapshot.val().name} posted ${text ? 'a message' : 'an image'}`,
           body: text ? (text.length <= 100 ? text : text.substring(0, 97) + '...') : '',
-          icon: snapshot.val().photoUrl || './assets/profile_placeholder.png',
-          click_action: `https://www.theparadigm.ga/bread.html`,
+          icon: snapshot.val().photoUrl || './P.png',
+          click_action: `https://www.theparadigm.ga/flamechat.html`,
         }
       };
 

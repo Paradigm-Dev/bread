@@ -279,3 +279,13 @@ a  {
   width: 150px;
   margin: 10px;
 }
+
+.plus-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+table {
+  border-spacing: 20px;
+}
