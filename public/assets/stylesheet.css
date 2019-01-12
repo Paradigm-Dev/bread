@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
-  font-family: 'Open Sans';
   background-color: silver;
   color: white;
 }
@@ -288,4 +293,8 @@ a  {
 
 table {
   border-spacing: 20px;
+}
+
+ul {
+  list-style-type: square;
 }
