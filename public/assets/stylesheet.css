@@ -224,7 +224,7 @@ main, #messages-card {
   padding-left: 20px;
 }
 
-#user-container button {
+#user-container button#sign-out {
   top: 2px;
 }
 
