@@ -23,30 +23,30 @@ exports.addWelcomeMessages = functions.auth.user().onCreate(async (user) => {
 
 // Sends a notifications to all users when a new message is posted.
 exports.sendNotifications = functions.database.ref('/messages/{messageId}').onCreate(
-    async (snapshot) => {
-      // Notification details.
-      const text = snapshot.val().text;
-      const payload = {
-        notification: {
-          title: `${snapshot.val().name} posted ${text ? 'a message' : 'an image'}`,
-          body: text ? (text.length <= 100 ? text : text.substring(0, 97) + '...') : '',
-          icon: snapshot.val().photoUrl || './assets/P.png',
-          click_action: `https://www.theparadigm.ga/flamechat.html`,
-        }
-      };
-
-      // Get the list of device tokens.
-      const allTokens = await admin.database().ref('fcmTokens').once('value');
-      if (allTokens.exists()) {
-        // Listing all device tokens to send a notification to.
-        const tokens = Object.keys(allTokens.val());
-
-        // Send notifications to all tokens.
-        const response = await admin.messaging().sendToDevice(tokens, payload);
-        await cleanupTokens(response, tokens);
-        console.log('Notifications have been sent and tokens cleaned up.');
+  async (snapshot) => {
+    // Notification details.
+    const text = snapshot.val().text;
+    const payload = {
+      notification: {
+        title: `${snapshot.val().name} posted ${text ? 'a message' : 'an image'}`,
+        body: text ? (text.length <= 100 ? text : text.substring(0, 97) + '...') : '',
+        icon: snapshot.val().photoUrl || './assets/P.png',
+        click_action: `https://www.theparadigm.ga/flamechat.html`,
       }
-    });
+    };
+
+    // Get the list of device tokens.
+    const allTokens = await admin.database().ref('fcmTokens').once('value');
+    if (allTokens.exists()) {
+      // Listing all device tokens to send a notification to.
+      const tokens = Object.keys(allTokens.val());
+
+      // Send notifications to all tokens.
+      const response = await admin.messaging().sendToDevice(tokens, payload);
+      await cleanupTokens(response, tokens);
+      console.log('Notifications have been sent and tokens cleaned up.');
+    }
+  });
 
 // Cleans up the tokens that are no longer valid.
 function cleanupTokens(response, tokens) {
