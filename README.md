@@ -1,4 +1,4 @@
-# DEPRECATION NOTICE
+# Note
 This branch was retired and the Next branch replaced this one. Previously, we used **MDL** (Material Design Lite, https://www.getmdl.io) and after some serious consideration, we migrated over to **Vuetify** (https://www.vuetifyjs.com). This caused a major redesign. Our team has completed this.
 
 ### Timeline
